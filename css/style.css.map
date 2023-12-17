@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"style.css"}
+{"version":3,"sources":["../sass/components/_board.scss","style.css"],"names":[],"mappings":"AAAA;EACI,4CAAA;ACCJ;;ADEA;EACI,iBAAA;EACA,yBAAA;EACA,uBAAA;ACCJ;;ADEA;EACI,WAAA;EACA,UAAA;ACCJ","file":"style.css"}

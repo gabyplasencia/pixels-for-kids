@@ -1,1 +1,14 @@
-/*# sourceMappingURL=style.css.map */
+table, tr, td {
+  border: 1px solid rgba(187, 187, 187, 0.233);
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+td {
+  height: 8px;
+  width: 8px;
+}/*# sourceMappingURL=style.css.map */
