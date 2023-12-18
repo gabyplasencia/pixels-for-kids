@@ -12,4 +12,8 @@ table {
 td {
   height: 8px;
   width: 8px;
+}
+
+.modal.hidden {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

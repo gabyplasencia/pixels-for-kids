@@ -1,6 +1,5 @@
 const board = document.getElementById('board');
-const buttonSize = document.querySelectorAll('.b-size');
-const buttonOption = document.querySelectorAll('.b-option');
+const buttonResize = document.getElementById('resize');
 
 const pixelBoard = {
 
@@ -27,6 +26,18 @@ const pixelBoard = {
     },
 
     changeBoardSize: () => {
+        const resizeMenu = document.querySelector('.board__modal');
+        const closeMenu = resizeMenu.querySelector('.close');
+        const buttonSize = document.querySelectorAll('.b-size');
+
+        buttonResize.addEventListener('click', () => {
+            resizeMenu.classList.remove('hidden');
+        })
+
+        closeMenu.addEventListener('click', () => {
+            resizeMenu.classList.add('hidden');
+        })
+
         const createBoard = (selectedSize = 30, width = 1) => {
             for(i = 1; i <= selectedSize; i++){
                 let row = document.createElement('tr');
@@ -40,7 +51,8 @@ const pixelBoard = {
 
         buttonSize.forEach( btn => {
         btn.addEventListener('click', (e) => {
-            currentBtn = e.target;
+            let currentBtn = e.target;
+
             if(currentBtn.id === 'small'){
                 pixelBoard.deleteBoard();
                 createBoard(30);

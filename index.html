@@ -59,14 +59,15 @@
                 <div class="colors" id="color16"></div>
             </div>
         </section>
-        <section class="wrapper-board">
+        <section class="board wrapper-board">
             <table id="board"></table>
             <div class="wrapper-board-settings">
-                <button class="board__option b-option" id="save">save</button>
-                <button class="board__option b-option" id="delete">delete</button>
-                <button class="board__option b-option" id="resize">resize</button>
+                <button class="board__option" id="save">save</button>
+                <button class="board__option" id="delete">delete</button>
+                <button class="board__option" id="resize">resize</button>
             </div>
-            <div class="modal hidden">
+            <div class="modal board__modal hidden">
+                <button class="close">X</button>
                 <strong class="wrapper-option__title">Board Size</strong>
                 <div class="wrapper-board-size">
                     <button class="modal__wrapper-option b-size" id="small">small</button>
