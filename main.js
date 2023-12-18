@@ -1,11 +1,14 @@
 const board = document.getElementById('board');
-const buttonResize = document.getElementById('resize');
+const resizeButton = document.getElementById('resize');
+const deleteDraw = document.getElementById('delete');
 
 const pixelBoard = {
 
     init: () => {
         pixelBoard.showBoard();
         pixelBoard.changeBoardSize();
+        pixelBoard.deleteDraw();
+        pixelBoard.addEvents();
     },
 
     showBoard: () => {
@@ -25,12 +28,23 @@ const pixelBoard = {
         }
     },
 
+    createBoard: (selectedSize = 30, width = 1) => {
+        for(i = 1; i <= selectedSize; i++){
+            let row = document.createElement('tr');
+            for(j = 1; j <= selectedSize*width ; j++){
+                let cell = document.createElement('td');
+                row.appendChild(cell);
+            }
+            board.appendChild(row);
+        }
+    },
+
     changeBoardSize: () => {
         const resizeMenu = document.querySelector('.board__modal');
         const closeMenu = resizeMenu.querySelector('.close');
-        const buttonSize = document.querySelectorAll('.b-size');
+        const sizeButton = document.querySelectorAll('.b-size');
 
-        buttonResize.addEventListener('click', () => {
+        resizeButton.addEventListener('click', () => {
             resizeMenu.classList.remove('hidden');
         })
 
@@ -38,39 +52,28 @@ const pixelBoard = {
             resizeMenu.classList.add('hidden');
         })
 
-        const createBoard = (selectedSize = 30, width = 1) => {
-            for(i = 1; i <= selectedSize; i++){
-                let row = document.createElement('tr');
-                for(j = 1; j <= selectedSize*width ; j++){
-                    let cell = document.createElement('td');
-                    row.appendChild(cell);
-                }
-                board.appendChild(row);
-            }
-        }
-
-        buttonSize.forEach( btn => {
+        sizeButton.forEach( btn => {
         btn.addEventListener('click', (e) => {
             let currentBtn = e.target;
 
             if(currentBtn.id === 'small'){
                 pixelBoard.deleteBoard();
-                createBoard(30);
-                buttonSize.forEach( btn => {
+                pixelBoard.createBoard(30);
+                sizeButton.forEach( btn => {
                     btn.classList.remove('size-selected');
                 })
                 currentBtn.classList.add('size-selected');
             }else if(currentBtn.id === 'medium'){
                 pixelBoard.deleteBoard();
-                createBoard(50, 1.3);
-                buttonSize.forEach( btn => {
+                pixelBoard.createBoard(50, 1.3);
+                sizeButton.forEach( btn => {
                     btn.classList.remove('size-selected');
                 })
                 currentBtn.classList.add('size-selected');
             }else {
                 pixelBoard.deleteBoard();
-                createBoard(50, 1.6);
-                buttonSize.forEach( btn => {
+                pixelBoard.createBoard(50, 1.6);
+                sizeButton.forEach( btn => {
                     btn.classList.remove('size-selected');
                 })
                 currentBtn.classList.add('size-selected');
@@ -78,6 +81,31 @@ const pixelBoard = {
         })
     })
     },
+
+    deleteDraw: () => {
+        deleteDraw.addEventListener('click', () => {
+            let selectedSize = document.querySelector('.size-selected').id;
+            pixelBoard.deleteBoard();
+            if(selectedSize === 'small'){
+                pixelBoard.createBoard(30);
+            }else if(selectedSize === 'medium'){
+                pixelBoard.createBoard(50, 1.3);
+            }else {
+                pixelBoard.createBoard(50, 1.6);
+            }
+        })
+    },
+
+    addEvents: () => {
+        board.addEventListener('click', pixelBoard.pintar);
+    },
+
+    pintar: (e) => {
+        if(!e){return;}
+        if(e.target.tagName == 'TD'){
+            e.target.style.backgroundColor = 'black';
+        }
+    }
 }
 
 document.addEventListener("DOMContentLoaded", pixelBoard.init());
