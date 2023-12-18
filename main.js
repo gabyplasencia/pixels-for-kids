@@ -8,7 +8,7 @@ const pixelBoard = {
         pixelBoard.showBoard();
         pixelBoard.changeBoardSize();
         pixelBoard.deleteDraw();
-        pixelBoard.addEvents();
+        pixelBoard.draw();
     },
 
     showBoard: () => {
@@ -96,16 +96,26 @@ const pixelBoard = {
         })
     },
 
-    addEvents: () => {
-        board.addEventListener('click', pixelBoard.pintar);
-    },
-
-    pintar: (e) => {
-        if(!e){return;}
-        if(e.target.tagName == 'TD'){
+    draw: () => {
+        const activeDraw = (e) => {
+          if (!e) {
+            return;
+          }
+          if (e.target.tagName === 'TD') {
             e.target.style.backgroundColor = 'black';
-        }
-    }
+          }
+        };
+    
+        const mouseUpHandler = () => {
+          board.removeEventListener('mouseover', activeDraw);
+        };
+    
+        board.addEventListener('mousedown', () => {
+          board.addEventListener('mouseover', activeDraw);
+        });
+    
+        board.addEventListener('mouseup', mouseUpHandler);
+      }
 }
 
 document.addEventListener("DOMContentLoaded", pixelBoard.init());
