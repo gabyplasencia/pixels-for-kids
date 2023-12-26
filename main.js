@@ -9,8 +9,24 @@ const pixelBoard = {
         pixelBoard.changeBoardSize();
         pixelBoard.deleteDraw();
         pixelBoard.randomPalette();
+        const palette = document.querySelectorAll('.colors');
+        const wrapper = document.querySelector(".wrapper-colors");
+
+        palette.forEach( color => {
+            color.addEventListener('click', (e) => {
+                let selectedColor = e.target;
+                palette.forEach( color => { 
+                    color.classList.remove('color-picked');
+                    })
+                selectedColor.classList.add('color-picked');
+                if(e.target.classList.contains('color-picked')){
+                    wrapper.dataset.selectedColor = e.target.value;
+                }
+            })
+        })
         pixelBoard.editColors();
         pixelBoard.brush();
+        pixelBoard.bucket();
     },
 
     showBoard: () => {
@@ -163,40 +179,31 @@ const pixelBoard = {
         })
     },
 
-    brush: () => {
-        const brush = document.getElementById('brush');
+    draw: (e) => {
+       // const palette = document.querySelectorAll('.colors');
+        const wrapper = document.querySelector(".wrapper-colors");
+        const button = e.target.closest(".board__option");
+        // let currentColor = wrapper.dataset.selectedColor;
+        // palette.forEach( color => {
+        //     color.addEventListener('click', (e) => {
+        //         let selectedColor = e.target;
+        //         palette.forEach( color => {
+        //             color.classList.remove('color-picked');
+        //             })
+        //         selectedColor.classList.add('color-picked');
 
-        brush.addEventListener('click', () => {
-            document.body.style.cursor = "pointer";
-            pixelBoard.draw();
-        })
-    },
-
-    draw: () => {
-        const palette = document.querySelectorAll('.colors');
-        let currentColor;
-
-        palette.forEach( color => {
-            color.addEventListener('click', (e) => {
-                let selectedColor = e.target;
-                palette.forEach( color => {
-                    color.classList.remove('color-picked');
-                    })
-                selectedColor.classList.add('color-picked');
-                console.log(e.target.tagName)
-
-                if(e.target.classList.contains('color-picked')){
-                    currentColor = e.target;
-                }
-            })
-        })
+        //         if(e.target.classList.contains('color-picked')){
+        //             currentColor = e.target;
+        //         }
+        //     })
+        // })
 
         const activeDraw = (e) => {
-          if (!e) {
+          if (!e || !button.classList.contains("active")) {
             return;
           }
           if (e.target.tagName === 'TD') {
-            e.target.style.backgroundColor = currentColor.value;
+            e.target.style.backgroundColor = wrapper?.dataset?.selectedColor;
           }
         };
     
@@ -209,7 +216,75 @@ const pixelBoard = {
         });
     
         board.addEventListener('mouseup', mouseUpHandler);
-    }
+    },
+
+    brush: () => {
+        const brush = document.getElementById('brush');
+
+        brush.addEventListener('click', (e) => {
+            //
+            brush.classList.toggle("active");
+            document.body.style.cursor = "pointer";
+            pixelBoard.draw(e);
+        })
+    },
+
+    bucket: () => {
+        const wrapper = document.querySelector(".wrapper-colors");
+        const bucketButton = document.getElementById('bucket');
+
+        const bucketFill = (startingCell, targetColor) => {
+            const queue = [startingCell];
+            const visited = new Set();
+
+            while (queue.length > 0) {
+                const currentCell = queue.shift();
+
+                if (visited.has(currentCell)) {
+                continue;
+                }
+
+                const cellColor = currentCell.style.backgroundColor;
+                if (cellColor === targetColor) {
+                currentCell.style.backgroundColor = wrapper?.dataset?.selectedColor;
+
+                const row = currentCell.parentNode.rowIndex;
+                const column = currentCell.cellIndex;
+
+                const adjacentCells = [
+                    [row - 1, column], 
+                    [row + 1, column], 
+                    [row, column - 1], 
+                    [row, column + 1], 
+                ];
+
+                adjacentCells.forEach(([r, c]) => {
+                    const nextCell = board.rows[r]?.cells[c];
+                    if (nextCell && nextCell.style.backgroundColor === cellColor) {
+                    queue.push(nextCell);
+                    }
+                });
+                }
+
+                visited.add(currentCell);
+            }
+        };
+
+        bucketButton.addEventListener('click', () => {
+            document.body.style.cursor = "wait";
+
+            const selectedColor = document.querySelector('.color-picked');
+            if (selectedColor) {
+                currentColor = selectedColor.value;
+
+                board.querySelectorAll('td').forEach((cell) => {
+                cell.addEventListener('click', () => {
+                    bucketFill(cell, cell.style.backgroundColor);
+                });
+                });
+            }
+            });
+        },
 }
 
 document.addEventListener("DOMContentLoaded", pixelBoard.init());
