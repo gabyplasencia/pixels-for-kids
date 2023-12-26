@@ -8,9 +8,9 @@ const pixelBoard = {
         pixelBoard.showBoard();
         pixelBoard.changeBoardSize();
         pixelBoard.deleteDraw();
-        pixelBoard.draw();
         pixelBoard.randomPalette();
         pixelBoard.editColors();
+        pixelBoard.draw();
     },
 
     showBoard: () => {
@@ -101,14 +101,6 @@ const pixelBoard = {
     randomPalette: () => {
         const numElements = 16;
         let wrapperColor = document.querySelector(".wrapper-colors");
-        // for(let i = 0; i<numElements; i++){
-        //     let label = document.createElement("label");
-        //     let input = document.createElement("input");
-        //     input.type = "color";
-        //     input.classList.add("colors");
-        //     label.appendChild(input);
-        //     wrapperColor.appendChild(label);
-        // }
         for(let i = 0; i<numElements; i++){
             let label = document.createElement("label");
             let input = document.createElement("input");
@@ -132,7 +124,7 @@ const pixelBoard = {
             input.style.backgroundColor = setColor;
             input.style.color = window.getComputedStyle(input).getPropertyValue('background-color');
             input.setAttribute('value', setColor);
-            input.setAttribute('type', 'text');
+            input.setAttribute('type', 'button');
         });
     },
 
@@ -157,7 +149,6 @@ const pixelBoard = {
                         color.style.color = color.value;
                         color.setAttribute('value', color.value);
                     }
-                    
                 })
             })
         })
@@ -167,27 +158,28 @@ const pixelBoard = {
             colorCheck.classList.add('hidden');
 
             palette.forEach( color => {
-                color.setAttribute('type', 'text');
+                color.setAttribute('type', 'button');
             })
         })
     },
 
     draw: () => {
-        const colorInputs = document.querySelectorAll('.colors');
-        let selectedColor;
+        const palette = document.querySelectorAll('.colors');
+        let currentColor;
 
-        colorInputs.forEach( color => {
+        palette.forEach( color => {
             color.addEventListener('click', (e) => {
-                let selectedInput = e.target;
-                // colorInputs.forEach( color => {
-                //     color.classList.remove('color-picked');
-                //     })
-                selectedInput.classList.add('color-picked');
+                let selectedColor = e.target;
+                palette.forEach( color => {
+                    color.classList.remove('color-picked');
+                    })
+                selectedColor.classList.add('color-picked');
                 console.log(e.target.tagName)
+
+                if(e.target.classList.contains('color-picked')){
+                    currentColor = e.target;
+                }
             })
-            if(e.target.classList.contains('color-picked')){
-                selectedColor = e.target;
-            }
         })
 
         const activeDraw = (e) => {
@@ -195,7 +187,7 @@ const pixelBoard = {
             return;
           }
           if (e.target.tagName === 'TD') {
-            e.target.style.backgroundColor = selectedColor.value;
+            e.target.style.backgroundColor = currentColor.value;
           }
         };
     
