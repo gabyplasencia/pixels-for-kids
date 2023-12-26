@@ -10,7 +10,7 @@ const pixelBoard = {
         pixelBoard.deleteDraw();
         pixelBoard.randomPalette();
         pixelBoard.editColors();
-        pixelBoard.draw();
+        pixelBoard.brush();
     },
 
     showBoard: () => {
@@ -160,6 +160,15 @@ const pixelBoard = {
             palette.forEach( color => {
                 color.setAttribute('type', 'button');
             })
+        })
+    },
+
+    brush: () => {
+        const brush = document.getElementById('brush');
+
+        brush.addEventListener('click', () => {
+            document.body.style.cursor = "pointer";
+            pixelBoard.draw();
         })
     },
 
