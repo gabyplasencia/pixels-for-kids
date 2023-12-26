@@ -9,6 +9,8 @@ const pixelBoard = {
         pixelBoard.changeBoardSize();
         pixelBoard.deleteDraw();
         pixelBoard.draw();
+        pixelBoard.randomPalette();
+        pixelBoard.editColors();
     },
 
     showBoard: () => {
@@ -96,13 +98,104 @@ const pixelBoard = {
         })
     },
 
+    randomPalette: () => {
+        const numElements = 16;
+        let wrapperColor = document.querySelector(".wrapper-colors");
+        // for(let i = 0; i<numElements; i++){
+        //     let label = document.createElement("label");
+        //     let input = document.createElement("input");
+        //     input.type = "color";
+        //     input.classList.add("colors");
+        //     label.appendChild(input);
+        //     wrapperColor.appendChild(label);
+        // }
+        for(let i = 0; i<numElements; i++){
+            let label = document.createElement("label");
+            let input = document.createElement("input");
+            input.classList.add("colors");
+            label.appendChild(input);
+            wrapperColor.appendChild(label);
+        }
+        const colorInputs = document.querySelectorAll('.colors');
+
+        const getRandomColor = () => {
+          const letters = '0123456789ABCDEF';
+          let color = '#';
+          for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+          }
+          return color;
+        };
+        
+        colorInputs.forEach((input) => {
+            setColor = getRandomColor();
+            input.style.backgroundColor = setColor;
+            input.style.color = window.getComputedStyle(input).getPropertyValue('background-color');
+            input.setAttribute('value', setColor);
+            input.setAttribute('type', 'text');
+        });
+    },
+
+    editColors: () => {
+        const editColor = document.getElementById('color-edit');
+        const colorCheck = document.getElementById('color-edit-finish');
+        let palette = document.querySelectorAll('.colors');
+
+        let colors = [];
+
+        editColor.addEventListener('click', () => {
+            colorCheck.classList.remove('hidden');
+            editColor.classList.add('hidden');
+
+            palette.forEach( color => {
+                colors.push(color.value);
+                color.setAttribute('type', 'color');
+
+                color.addEventListener('click', () => {
+                    color.oninput = () => {
+                        color.style.backgroundColor = color.value;
+                        color.style.color = color.value;
+                        color.setAttribute('value', color.value);
+                    }
+                    
+                })
+            })
+        })
+
+        colorCheck.addEventListener('click', () => {
+            editColor.classList.remove('hidden');
+            colorCheck.classList.add('hidden');
+
+            palette.forEach( color => {
+                color.setAttribute('type', 'text');
+            })
+        })
+    },
+
     draw: () => {
+        const colorInputs = document.querySelectorAll('.colors');
+        let selectedColor;
+
+        colorInputs.forEach( color => {
+            color.addEventListener('click', (e) => {
+                let selectedInput = e.target;
+                // colorInputs.forEach( color => {
+                //     color.classList.remove('color-picked');
+                //     })
+                selectedInput.classList.add('color-picked');
+                console.log(e.target.tagName)
+            })
+            if(e.target.classList.contains('color-picked')){
+                selectedColor = e.target;
+            }
+        })
+
         const activeDraw = (e) => {
           if (!e) {
             return;
           }
           if (e.target.tagName === 'TD') {
-            e.target.style.backgroundColor = 'black';
+            e.target.style.backgroundColor = selectedColor.value;
           }
         };
     
@@ -115,7 +208,7 @@ const pixelBoard = {
         });
     
         board.addEventListener('mouseup', mouseUpHandler);
-      }
+    }
 }
 
 document.addEventListener("DOMContentLoaded", pixelBoard.init());

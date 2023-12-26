@@ -16,4 +16,8 @@ td {
 
 .modal.hidden {
   display: none;
+}
+
+.board__option.hidden {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
