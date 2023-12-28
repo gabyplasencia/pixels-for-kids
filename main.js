@@ -27,6 +27,7 @@ const pixelBoard = {
         pixelBoard.editColors();
         pixelBoard.brush();
         pixelBoard.bucket();
+        pixelBoard.save();
     },
 
     showBoard: () => {
@@ -284,7 +285,25 @@ const pixelBoard = {
                 });
             }
             });
-        },
+    },
+
+    save: () => {
+        const board = document.getElementById('board');
+        const saveButton = document.getElementById('save');
+
+        function saveTableAsImage() {
+            html2canvas(board).then(function(canvas) {
+                const imageData = canvas.toDataURL('image/png');
+
+                const link = document.createElement('a');
+                link.href = imageData;
+                link.download = 'board_image.png';
+                link.click();
+            });
+        }
+
+        saveButton.addEventListener('click', saveTableAsImage);
+    }
 }
 
 document.addEventListener("DOMContentLoaded", pixelBoard.init());
