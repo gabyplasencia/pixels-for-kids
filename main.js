@@ -9,24 +9,9 @@ const pixelBoard = {
         pixelBoard.changeBoardSize();
         pixelBoard.deleteDraw();
         pixelBoard.randomPalette();
-        const palette = document.querySelectorAll('.colors');
-        const wrapper = document.querySelector(".wrapper-colors");
-
-        palette.forEach( color => {
-            color.addEventListener('click', (e) => {
-                let selectedColor = e.target;
-                palette.forEach( color => { 
-                    color.classList.remove('color-picked');
-                    })
-                selectedColor.classList.add('color-picked');
-                if(e.target.classList.contains('color-picked')){
-                    wrapper.dataset.selectedColor = e.target.value;
-                }
-            })
-        })
+        pixelBoard.colorSelection();
         pixelBoard.editColors();
-        pixelBoard.brush();
-        pixelBoard.bucket();
+        pixelBoard.toolSelector();
         pixelBoard.save();
     },
 
@@ -143,6 +128,10 @@ const pixelBoard = {
             input.setAttribute('value', setColor);
             input.setAttribute('type', 'button');
         });
+        colorInputs[0].classList.add('color-picked');
+        const wrapper = document.querySelector(".wrapper-colors");
+        let colorPicked = document.querySelector('.color-picked');
+        wrapper.dataset.selectedColor = colorPicked.value;
     },
 
     editColors: () => {
@@ -180,59 +169,55 @@ const pixelBoard = {
         })
     },
 
-    draw: (e) => {
-       // const palette = document.querySelectorAll('.colors');
+    colorSelection: () => {
+        const palette = document.querySelectorAll('.colors');
         const wrapper = document.querySelector(".wrapper-colors");
-        const button = e.target.closest(".board__option");
-        // let currentColor = wrapper.dataset.selectedColor;
-        // palette.forEach( color => {
-        //     color.addEventListener('click', (e) => {
-        //         let selectedColor = e.target;
-        //         palette.forEach( color => {
-        //             color.classList.remove('color-picked');
-        //             })
-        //         selectedColor.classList.add('color-picked');
 
-        //         if(e.target.classList.contains('color-picked')){
-        //             currentColor = e.target;
-        //         }
-        //     })
-        // })
-
-        const activeDraw = (e) => {
-          if (!e || !button.classList.contains("active")) {
-            return;
-          }
-          if (e.target.tagName === 'TD') {
-            e.target.style.backgroundColor = wrapper?.dataset?.selectedColor;
-          }
-        };
-    
-        const mouseUpHandler = () => {
-          board.removeEventListener('mouseover', activeDraw);
-        };
-    
-        board.addEventListener('mousedown', () => {
-          board.addEventListener('mouseover', activeDraw);
-        });
-    
-        board.addEventListener('mouseup', mouseUpHandler);
-    },
-
-    brush: () => {
-        const brush = document.getElementById('brush');
-
-        brush.addEventListener('click', (e) => {
-            //
-            brush.classList.toggle("active");
-            document.body.style.cursor = "pointer";
-            pixelBoard.draw(e);
+        palette.forEach( color => {
+            color.addEventListener('click', (e) => {
+                let selectedColor = e.target;
+                palette.forEach( color => { 
+                    color.classList.remove('color-picked');
+                    })
+                selectedColor.classList.add('color-picked');
+                if(e.target.classList.contains('color-picked')){
+                    wrapper.dataset.selectedColor = e.target.value;
+                }
+            })
         })
     },
 
-    bucket: () => {
+    brush: () => {
+        const wrapper = document.querySelector('.wrapper-colors');
+        const brush = document.getElementById('brush');
+        document.body.style.cursor = "pointer";
+
+        if(brush.classList.contains('active-tool')){
+            const activeDraw = (e) => {
+                if (!e) {
+                    return;
+                }
+                if (e.target.tagName === 'TD') {
+                    e.target.style.backgroundColor = wrapper?.dataset?.selectedColor;
+                }
+            };
+        
+            const mouseUpHandler = () => {
+                board.removeEventListener('mouseover', activeDraw);
+            };
+        
+            board.addEventListener('mousedown', () => {
+                board.addEventListener('mouseover', activeDraw);
+            });
+        
+            board.addEventListener('mouseup', mouseUpHandler);
+            board.addEventListener('mouseleave', mouseUpHandler);
+        }
+
+    },
+
+    bucket: (cell, color) => {
         const wrapper = document.querySelector(".wrapper-colors");
-        const bucketButton = document.getElementById('bucket');
 
         const bucketFill = (startingCell, targetColor) => {
             const queue = [startingCell];
@@ -270,21 +255,37 @@ const pixelBoard = {
                 visited.add(currentCell);
             }
         };
+        bucketFill(cell, color);
+    },
 
-        bucketButton.addEventListener('click', () => {
-            document.body.style.cursor = "wait";
+    toolSelector: () => {
+        const tools = document.getElementById('tools');
+        const toolsOptions = tools.querySelectorAll('.board__option');
 
-            const selectedColor = document.querySelector('.color-picked');
-            if (selectedColor) {
-                currentColor = selectedColor.value;
+        toolsOptions.forEach( tool => {
+            tool.addEventListener( 'click', () => {
+                toolsOptions.forEach( tool => {tool.classList.remove('active-tool');});
 
-                board.querySelectorAll('td').forEach((cell) => {
-                cell.addEventListener('click', () => {
-                    bucketFill(cell, cell.style.backgroundColor);
-                });
-                });
-            }
-            });
+                if(tool.id === 'bucket'){
+                    tool.classList.add('active-tool');
+                    document.body.style.cursor = "wait";
+                    let selectedColor = document.querySelector('.color-picked');
+
+                    if (selectedColor) {
+                        currentColor = selectedColor.value;
+                        board.querySelectorAll('td').forEach((cell) => {
+                        cell.addEventListener('click', () => {
+                            pixelBoard.bucket(cell, cell.style.backgroundColor);
+                        });
+                        });
+                    }
+                }
+                if(tool.id === 'brush'){
+                    tool.classList.add('active-tool');
+                    pixelBoard.brush();
+                }
+            })
+        })
     },
 
     save: () => {
@@ -297,7 +298,7 @@ const pixelBoard = {
 
                 const link = document.createElement('a');
                 link.href = imageData;
-                link.download = 'board_image.png';
+                link.download = 'my-pixelart.png';
                 link.click();
             });
         }
