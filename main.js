@@ -5,7 +5,7 @@ const deleteDraw = document.getElementById('delete');
 const pixelBoard = {
 
     init: () => {
-        pixelBoard.showBoard();
+        pixelBoard.createBoard();
         pixelBoard.changeBoardSize();
         pixelBoard.deleteDraw();
         pixelBoard.randomPalette();
@@ -13,23 +13,6 @@ const pixelBoard = {
         pixelBoard.editColors();
         pixelBoard.toolSelector();
         pixelBoard.save();
-    },
-
-    showBoard: () => {
-        for(i = 1; i <= 30; i++){
-            let row = document.createElement('tr');
-            for(j = 1; j <= 30 ; j++){
-                let cell = document.createElement('td');
-                row.appendChild(cell);
-            }
-            board.appendChild(row);
-        }
-    },
-
-    deleteBoard: () => {
-        while (board.firstChild) {
-        board.removeChild(board.firstChild);
-        }
     },
 
     createBoard: (selectedSize = 30, width = 1) => {
@@ -40,6 +23,12 @@ const pixelBoard = {
                 row.appendChild(cell);
             }
             board.appendChild(row);
+        }
+    },
+
+    deleteBoard: () => {
+        while (board.firstChild) {
+        board.removeChild(board.firstChild);
         }
     },
 
@@ -192,15 +181,21 @@ const pixelBoard = {
         const brush = document.getElementById('brush');
         document.body.style.cursor = "pointer";
 
-        if(brush.classList.contains('active-tool')){
+        board.addEventListener('dragstart', (e) => {
+            e.preventDefault();
+        });
+
+        
             const activeDraw = (e) => {
+                if(brush.classList.contains('active-tool')){
                 if (!e) {
                     return;
                 }
                 if (e.target.tagName === 'TD') {
                     e.target.style.backgroundColor = wrapper?.dataset?.selectedColor;
                 }
-            };
+            };        
+        }
         
             const mouseUpHandler = () => {
                 board.removeEventListener('mouseover', activeDraw);
@@ -212,14 +207,15 @@ const pixelBoard = {
         
             board.addEventListener('mouseup', mouseUpHandler);
             board.addEventListener('mouseleave', mouseUpHandler);
-        }
 
     },
 
     bucket: (cell, color) => {
         const wrapper = document.querySelector(".wrapper-colors");
+        const bucket = document.getElementById('bucket');
 
         const bucketFill = (startingCell, targetColor) => {
+            if(bucket.classList.contains('active-tool')){
             const queue = [startingCell];
             const visited = new Set();
 
@@ -255,6 +251,7 @@ const pixelBoard = {
                 visited.add(currentCell);
             }
         };
+    }
         bucketFill(cell, color);
     },
 
