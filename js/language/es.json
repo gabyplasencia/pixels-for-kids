@@ -1,0 +1,31 @@
+{
+    "menu": {
+        "head": "menú",
+        "language": "idioma",
+        "music": "música"
+    },
+
+    "tools": {
+        "bucket": "cubo",
+        "brush": "pincel"
+    },
+
+    "palette": {
+        "head": "paleta",
+        "edit": "editar",
+        "done": "hecho"
+    },
+
+    "board": {
+        "save": "guardar",
+        "delete": "borrar",
+        "resize": "cambiar tamaño"
+    },
+
+    "board-resize": {
+        "head": "tamaño",
+        "small": "pequeña",
+        "medium": "mediana",
+        "big": "grande"
+    }
+}

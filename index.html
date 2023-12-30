@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gabriela Plasencia" />
+    <meta name="description" content="A fun page to let kids explore their creativity with PixelArt" />
+    <!--<link rel="icon" href="assets/moon.svg" type="image/x-icon" /> -->
     <title>Pixels For Kids</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -10,7 +13,8 @@
     <h1 id="logo">LOGO</h1>
 
     <button id="menu">Menu</button>
-    <div class="modal hidden">
+    <div class="modal menu__modal hidden">
+        <button class="close">X</button>
         <div class="modal__wrapper-option">
             <strong class="wrapper-option__title">Language</strong>
             <button class="language" id="english">EN</button>
@@ -32,7 +36,7 @@
         <section class="wrapper-tools" id="palette">
             <h2 class="board__tools-title">Palette</h2>
             <button class="board__option" id="color-edit">edit</button>
-            <button class="board__option hidden" id="color-edit-finish">check</button>
+            <button class="board__option hidden" id="color-edit-finish">done</button>
             <div class="wrapper-colors">
             </div>
         </section>
@@ -62,7 +66,8 @@
         </section>
     </main>
 
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/menu.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
 </body>
 </html>

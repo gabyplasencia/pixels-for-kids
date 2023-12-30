@@ -21,4 +21,8 @@ td {
 
 .board__option.hidden {
   display: none;
+}
+
+#menu.hidden {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
