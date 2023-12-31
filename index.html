@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,57 +9,78 @@
     <title>Pixels For Kids</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <h1 id="logo">LOGO</h1>
 
-    <button id="menu">Menu</button>
+    <button id="menu" data-section="menu" data-value="head" aria-label="menu">Menu</button>
     <div class="modal menu__modal hidden">
         <button class="close">X</button>
         <div class="modal__wrapper-option">
-            <strong class="wrapper-option__title">Language</strong>
-            <button class="language" id="english">EN</button>
-            <button class="language" id="español">ES</button>
+            <strong class="wrapper-option__title" data-section="menu" data-value="language" aria-label="language">Language</strong>
+            <button class="language-btn" id="en" data-section="menu" data-value="attr-ariaLabel-en" aria-label="english">EN</button>
+            <button class="language-btn" id="es" data-section="menu" data-value="attr-ariaLabel-es" aria-label="spanish">ES</button>
         </div>
         <div class="modal__wrapper-option">
-            <strong class="wrapper-option__title">Music</strong>
-            <button class="music" id="on">ON</button>
-            <button class="music" id="off">OFF</button>
+            <strong class="wrapper-option__title" data-section="menu" data-value="music" aria-label="music">Music</strong>
+            <button class="music" id="on" data-section="menu" data-value="attr-ariaLabel-music_on" aria-label="music on">ON</button>
+            <button class="music" id="off" data-section="menu" data-value="attr-ariaLabel-music_off" aria-label="music off">OFF</button>
         </div>
     </div>
 
     <main class="wrapper-3d board">
         <section class="wrapper-tools" id="tools">
-            <h2 class="board__tools-title">Tools</h2>
-            <button class="board__option" id="bucket">bucket</button>
-            <button class="board__option" id="brush">brush</button>
+            <h2 class="board__tools-title" data-section="tools" data-value="head" aria-label="tools">Tools</h2>
+            <div class="wrapper-tool">
+                <span class="tooltip" data-section="tools" data-value="bucket">bucket</span>
+                <button class="board__option" id="bucket" aria-label="bucket">bucket</button>
+            </div>
+            <div class="wrapper-tool">
+                <span class="tooltip" data-section="tools" data-value="brush">brush</span>
+                <button class="board__option" id="brush" aria-label="brush">brush</button>
+            </div>
         </section>
+
         <section class="wrapper-tools" id="palette">
-            <h2 class="board__tools-title">Palette</h2>
-            <button class="board__option" id="color-edit">edit</button>
-            <button class="board__option hidden" id="color-edit-finish">done</button>
+            <h2 class="board__tools-title" data-section="palette" data-value="head">Palette</h2>
+            <div class="wrapper-palette-options">
+                <span class="tooltip" data-section="palette" data-value="edit">edit colors</span>
+                <button class="board__option" id="color-edit">edit</button>
+            </div>
+                <button class="board__option hidden" id="color-edit-finish" data-section="palette" data-value="done">done</button>
             <div class="wrapper-colors">
             </div>
         </section>
+
         <section class="board wrapper-board">
             <table id="board"></table>
             <div class="wrapper-board-settings">
-                <button class="board__option" id="save">save</button>
-                <button class="board__option" id="delete">delete</button>
-                <button class="board__option" id="resize">resize</button>
+                <div class="wrapper-board-option">
+                    <span class="tooltip" data-section="board" data-value="save">save draw</span>
+                    <button class="board__option" id="save">save</button>
+                </div>
+                <div class="wrapper-board-option">
+                    <span class="tooltip" data-section="board" data-value="delete">delete draw</span>
+                    <button class="board__option" id="delete">delete</button>
+                </div>
+                <div class="wrapper-board-option">
+                    <span class="tooltip" data-section="board" data-value="resize">resize board</span>
+                    <button class="board__option" id="resize">resize</button>
+                </div>
             </div>
             <div class="modal board__modal hidden">
                 <button class="close">X</button>
-                <strong class="wrapper-option__title">Board Size</strong>
+                <strong class="wrapper-option__title" data-section="board-resize" data-value="head">Board Size</strong>
                 <div class="wrapper-board-size">
-                    <button class="modal__wrapper-option size-selected b-size" id="small">small</button>
+                    <button class="modal__wrapper-option size-selected b-size" id="small" data-section="board-resize" data-value="small">small</button>
                     <span class="board-size">30x30</span>
                 </div>
                 <div class="wrapper-board-size">
-                    <button class="modal__wrapper-option b-size" id="medium">medium</button>
+                    <button class="modal__wrapper-option b-size" id="medium" data-section="board-resize" data-value="medium">medium</button>
                     <span class="board-size">50x65</span>                    
                 </div>
                 <div class="wrapper-board-size">
-                    <button class="modal__wrapper-option b-size" id="big">big</button>
+                    <button class="modal__wrapper-option b-size" id="big" data-section="board-resize" data-value="big">big</button>
                     <span class="board-size">50x80</span>                    
                 </div>
             </div>
@@ -68,6 +89,7 @@
 
     <script src="js/main.js"></script>
     <script src="js/menu.js"></script>
+    <script src="js/language.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
 </body>
 </html>

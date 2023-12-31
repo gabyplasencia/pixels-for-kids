@@ -1,0 +1,36 @@
+{
+    "menu": {
+        "head": "menu",
+        "language": [
+                    {"language" :"language"}, 
+                    {"attr-ariaLabel-language":"language"}],
+        "music": "music",
+        "attr-ariaLabel-en":"english",
+        "attr-ariaLabel-es":"spanish"
+    },
+
+    "tools": {
+        "head": "tools",
+        "bucket": "bucket",
+        "brush": "brush"
+    },
+
+    "palette": {
+        "head": "palette",
+        "edit": "edit colors",
+        "done": "done"
+    },
+
+    "board": {
+        "save": "save draw",
+        "delete": "delete draw",
+        "resize": "resize board"
+    },
+
+    "board-resize": {
+        "head": "board size",
+        "small": "small",
+        "medium": "medium",
+        "big": "big"
+    }
+}

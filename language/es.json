@@ -1,24 +1,30 @@
 {
     "menu": {
         "head": "menú",
-        "language": "idioma",
-        "music": "música"
+        "language": [
+                    {"language" :"idioma"}, 
+                    {"attr-ariaLabel-language":"idioma"}
+                ],
+        "music": "música",
+        "attr-ariaLabel-en":"inglés",
+        "attr-ariaLabel-es":"español"
     },
 
     "tools": {
+        "head": "herramientas",
         "bucket": "cubo",
         "brush": "pincel"
     },
 
     "palette": {
         "head": "paleta",
-        "edit": "editar",
+        "edit": "editar colores",
         "done": "hecho"
     },
 
     "board": {
-        "save": "guardar",
-        "delete": "borrar",
+        "save": "guardar dibujo",
+        "delete": "borrar dibujo",
         "resize": "cambiar tamaño"
     },
 
