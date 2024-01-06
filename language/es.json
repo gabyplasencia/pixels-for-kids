@@ -5,33 +5,58 @@
                     {"language" :"idioma"}, 
                     {"attr-ariaLabel-language":"idioma"}
                 ],
-        "music": "música",
+        "music": [
+                    {"music" :"música"},  
+                    {"attr-ariaLabel-music":"música"}],
         "attr-ariaLabel-en":"inglés",
-        "attr-ariaLabel-es":"español"
+        "attr-ariaLabel-es":"español",
+        "attr-ariaLabel-music_on":"encender música",
+        "attr-ariaLabel-music_off":"apagar música",
+        "attr-ariaLabel-close": "cerrar el menú"
     },
 
     "tools": {
-        "head": "herramientas",
-        "bucket": "cubo",
-        "brush": "pincel"
+        "head": [
+                {"tools" :"herramientas"}, 
+                {"attr-ariaLabel-tools":"herramientas"}],
+        "bucket": "cubo de pintura",
+        "attr-ariaLabel-bucket": "cubo de pintura",
+        "brush": "pincel",
+        "attr-ariaLabel-brush": "pincel"
     },
 
     "palette": {
-        "head": "paleta",
+        "head": [
+                {"palette" :"paleta"}, 
+                {"attr-ariaLabel-palette":"paleta de colores"}],
         "edit": "editar colores",
-        "done": "hecho"
+        "attr-ariaLabel-edit": "editar colores",
+        "done": "hecho",
+        "attr-ariaLabel-done": "hecho"
     },
 
     "board": {
         "save": "guardar dibujo",
+        "attr-ariaLabel-save": "guardar dibujo",
         "delete": "borrar dibujo",
-        "resize": "cambiar tamaño"
+        "attr-ariaLabel-delete": "borrar dibujo",
+        "resize": "tamaño de pizarra",
+        "attr-ariaLabel-resize": "tamaño de pizarra"
     },
 
     "board-resize": {
-        "head": "tamaño",
-        "small": "pequeña",
-        "medium": "mediana",
-        "big": "grande"
+        "head": [
+                {"size" :"tamaños"}, 
+                {"attr-ariaLabel-size":"tamaños"}],
+        "small": [
+                {"small" :"pequeña"}, 
+                {"attr-ariaLabel-small":"pequeña"}],
+        "medium": [
+                {"medium" :"mediana"}, 
+                {"attr-ariaLabel-medium":"mediana"}],
+        "big": [
+                {"big" :"grande"}, 
+                {"attr-ariaLabel-big":"grande"}],
+        "attr-ariaLabel-close": "cerrar menú"
     }
 }

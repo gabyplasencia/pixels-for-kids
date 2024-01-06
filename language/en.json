@@ -4,33 +4,58 @@
         "language": [
                     {"language" :"language"}, 
                     {"attr-ariaLabel-language":"language"}],
-        "music": "music",
-        "attr-ariaLabel-en":"english",
-        "attr-ariaLabel-es":"spanish"
+        "music": [
+                    {"music" :"music"}, 
+                    {"attr-ariaLabel-music":"music"}],
+        "attr-ariaLabel-en": "english",
+        "attr-ariaLabel-es": "spanish",
+        "attr-ariaLabel-music_on":"music on",
+        "attr-ariaLabel-music_off":"music off",
+        "attr-ariaLabel-close": "close menu"
     },
 
     "tools": {
-        "head": "tools",
+        "head": [
+                {"tools" :"tools"}, 
+                {"attr-ariaLabel-tools":"tools"}],
         "bucket": "bucket",
-        "brush": "brush"
+        "attr-ariaLabel-bucket": "bucket",
+        "brush": "brush",
+        "attr-ariaLabel-brush": "brush"
     },
 
     "palette": {
-        "head": "palette",
+        "head": [
+                {"palette" :"palette"}, 
+                {"attr-ariaLabel-palette":"palette"}],
         "edit": "edit colors",
-        "done": "done"
+        "attr-ariaLabel-edit": "edit colors",
+        "done": "done",
+        "attr-ariaLabel-done": "done"
     },
 
     "board": {
         "save": "save draw",
+        "attr-ariaLabel-save": "save draw",
         "delete": "delete draw",
-        "resize": "resize board"
+        "attr-ariaLabel-delete": "delete draw",
+        "resize": "resize board",
+        "attr-ariaLabel-resize": "resize board"
     },
 
     "board-resize": {
-        "head": "board size",
-        "small": "small",
-        "medium": "medium",
-        "big": "big"
+        "head": [
+                {"size" :"board sizes"}, 
+                {"attr-ariaLabel-size":"board sizes"}],
+        "small": [
+                {"small" :"small"}, 
+                {"attr-ariaLabel-small":"small"}],
+        "medium": [
+                {"medium" :"medium"}, 
+                {"attr-ariaLabel-medium":"medium"}],
+        "big": [
+                {"big" :"big"}, 
+                {"attr-ariaLabel-big":"big"}],
+        "attr-ariaLabel-close": "close menu"
     }
 }

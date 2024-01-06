@@ -15,16 +15,16 @@ const changeLanguage = async (language) => {
         if(Array.isArray(text)){
             text.forEach(val => {
                 for(const [key, value] of Object.entries(val)){
-                    changeAlgo(textToChange, key, value)
+                    translate(textToChange, key, value)
                 }
             })
         }else{
-            changeAlgo(textToChange, selector, text);
+            translate(textToChange, selector, text);
         }
 
     })
 }
-const changeAlgo = (textToChange, selector, text) =>{
+const translate = (textToChange, selector, text) =>{
     const array = selector.split("-");
     if(array?.length > 0 && array[0] == "attr"){
         textToChange[array[1]] = text
