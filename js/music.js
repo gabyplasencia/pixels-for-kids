@@ -1,21 +1,18 @@
 const backgroundMusic = document.getElementById('music');
 const musicOptions = document.querySelectorAll('.music');
 
+backgroundMusic.volume = 0.3;
+
 musicOptions.forEach( option => {
     option.addEventListener('click', () => {
-        if(!option.classList.contains('active')){
-            musicOptions.forEach( o => {
-                o.classList.remove('active');
-            })
-
-            option.classList.add('active');
-            if(option.id === "on"){
-                backgroundMusic.removeAttribute('muted')
-                backgroundMusic.setAttribute('autoplay', '')
-            }else{
-                backgroundMusic.setAttribute('muted', '')
-                console.log('click')
-            }
+        if(option.id == "off"){
+            backgroundMusic.pause();           
+        }else if(option.id == "on"){
+            backgroundMusic.play();
         }
     })
 })
+
+document.addEventListener("DOMContentLoaded", (e) => {
+    backgroundMusic.play();
+});
