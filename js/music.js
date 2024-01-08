@@ -1,7 +1,7 @@
 const backgroundMusic = document.getElementById('music');
 const musicOptions = document.querySelectorAll('.music');
 
-backgroundMusic.volume = 0.3;
+backgroundMusic.volume = 0.1;
 
 musicOptions.forEach( option => {
     option.addEventListener('click', () => {
@@ -13,6 +13,3 @@ musicOptions.forEach( option => {
     })
 })
 
-document.addEventListener("DOMContentLoaded", (e) => {
-    backgroundMusic.play();
-});
