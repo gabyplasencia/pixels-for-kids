@@ -1,3 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+body {
+  font-family: var(--main-font);
+  line-height: 1.4;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+:root {
+  --main-font: "Pixelify Sans", sans-serif;
+  --fw-regular: 400;
+  --fw-semibold: 600;
+}
+
 td {
   border: 1px solid black;
   /*rgba(187, 187, 187, 0.233)*/
