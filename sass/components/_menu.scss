@@ -1,3 +1,14 @@
-#menu.hidden {
+.menu {
+    padding: 0;
+    color: var(--white);
+    background-color: var(--brown);
+    border: 6px solid var(--light-brown);
+    padding-inline: 0.5rem;
+    font-weight: var(--fw-semibold);
+    letter-spacing: 5px;
+    font-size: var(--fs-200);
+}
+
+.menu.hidden {
     display: none;
 }
