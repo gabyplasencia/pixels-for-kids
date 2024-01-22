@@ -1,4 +1,4 @@
-const language = document.querySelectorAll('.language-btn');
+const language = document.querySelectorAll('.language-btnJS');
 const textsToChange = document.querySelectorAll('[data-section]');
 
 const changeLanguage = async (language) => {

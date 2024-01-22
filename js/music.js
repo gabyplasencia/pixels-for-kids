@@ -1,5 +1,5 @@
-const backgroundMusic = document.getElementById('music');
-const musicOptions = document.querySelectorAll('.music');
+const backgroundMusic = document.getElementById('musicJS');
+const musicOptions = document.querySelectorAll('.musicJS');
 
 backgroundMusic.volume = 0.1;
 

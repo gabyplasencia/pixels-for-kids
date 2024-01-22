@@ -1,6 +1,6 @@
-const menu = document.getElementById('menu');
-const menuModal = document.querySelector('.menu__modal');
-const closeMenu = menuModal.querySelector('.close');
+const menu = document.getElementById('menuJS');
+const menuModal = document.querySelector('.menu__modalJS');
+const closeMenu = menuModal.querySelector('.closeJS');
 
 menu.addEventListener('click', () => {
     menuModal.classList.remove('hidden');

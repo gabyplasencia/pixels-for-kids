@@ -11,83 +11,95 @@
 </head>
 
 <body>
-    <audio id="music" src="./assets/music/KevinMacLeod-IttyBitty-8Bit.mp3" loop></audio>
-    <h1 id="logo">LOGO</h1>
+    <audio id="musicJS" src="./assets/music/KevinMacLeod-IttyBitty-8Bit.mp3" loop></audio>
+    <div class="container">
+        <img src="assets/img/logo.png" id="logo">
 
-    <button id="menu" data-section="menu" data-value="head" aria-label="menu">Menu</button>
-    <div class="modal menu__modal hidden">
-        <button class="close" data-section="menu" data-value="attr-ariaLabel-close" aria-label="close menu">X</button>
-        <div class="modal__wrapper-option">
-            <strong class="wrapper-option__title" data-section="menu" data-value="language" aria-label="language">Language</strong>
-            <button class="language-btn" id="en" data-section="menu" data-value="attr-ariaLabel-en" aria-label="english">EN</button>
-            <button class="language-btn" id="es" data-section="menu" data-value="attr-ariaLabel-es" aria-label="spanish">ES</button>
+        <div class="wrapper">
+            <button id="menuJS" data-section="menu" data-value="head" aria-label="menu">Menu</button>
+            <div class="modal menu__modalJS hidden">
+                <button class="closeJS"><img data-section="menu" data-value="attr-ariaLabel-close" aria-label="close menu" src="assets/icons/close.png"></button>
+                <div class="modal__language modal__options">
+                    <strong class="language__title" data-section="menu" data-value="language" aria-label="language">Language</strong>
+                    <div class="laguage__options">
+                        <button class="language-btnJS"><img id="en" data-section="menu" data-value="attr-ariaLabel-en" aria-label="english" src="assets/img/en.png" class="lan-icon"></button>
+                        <button class="language-btnJS"><img id="es" data-section="menu" data-value="attr-ariaLabel-es" aria-label="spanish" src="assets/img/es.png" class="lan-icon"></button>
+                    </div>
+                </div>
+                <div class="modal__music modal__options">
+                    <strong class="music__title" data-section="menu" data-value="music" aria-label="music">Music</strong>
+                    <div class="music__options">
+                        <button class="musicJS" id="on" data-section="menu" data-value="attr-ariaLabel-music_on" aria-label="music on">ON</button>
+                        <img src="assets/icons/music-on.png">
+                        <img src="assets/icons/music-off.png">
+                        <button class="musicJS" id="off" data-section="menu" data-value="attr-ariaLabel-music_off" aria-label="music off">OFF</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="modal__wrapper-option">
-            <strong class="wrapper-option__title" data-section="menu" data-value="music" aria-label="music">Music</strong>
-            <button class="music" id="on" data-section="menu" data-value="attr-ariaLabel-music_on" aria-label="music on">ON</button>
-            <button class="music" id="off" data-section="menu" data-value="attr-ariaLabel-music_off" aria-label="music off">OFF</button>
-        </div>
+
+        <main class="wrapper-3d board">
+            <section class="tools-container" id="toolsJS">
+                <h2 class="board__tools-title" data-section="tools" data-value="head" aria-label="tools">Tools</h2>
+                <div class="tools-wrapper">
+                    <div class="wrapper-tool">
+                        <span class="tooltip" data-section="tools" data-value="bucket">bucket</span>
+                        <button class="board__optionJS" id="bucketJS" data-section="tools" data-value="attr-ariaLabel-bucket" aria-label="bucket">bucket</button>
+                    </div>
+                    <div class="tools-wrapper">
+                        <span class="tooltip" data-section="tools" data-value="brush">brush</span>
+                        <button class="board__optionJS" id="brushJS" data-section="tools" data-value="attr-ariaLabel-brush" aria-label="brush">brush</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tools-container" id="palette">
+                <h2 class="board__tools-title" data-section="palette" data-value="head" aria-label="palette">Palette</h2>
+                <div class="wrapper-palette-options">
+                    <span class="tooltip" data-section="palette" data-value="edit">edit colors</span>
+                    <button class="board__option" id="color-editJS" data-section="palette" data-value="attr-ariaLabel-edit" aria-label="edit colors">edit</button>
+                </div>
+                    <span class="tooltip" data-section="palette" data-value="done">done</span>
+                    <button class="board__option hidden" id="color-edit-finishJS" data-section="palette" data-value="attr-ariaLabel-done" aria-label="done">done</button>
+                <div class="wrapper-colorsJS">
+                </div>
+            </section>
+    
+            <section class="board wrapper-board">
+                <table id="boardJS"></table>
+                <div class="wrapper-board-settings">
+                    <div class="wrapper-board-option">
+                        <span class="tooltip" data-section="board" data-value="save">save draw</span>
+                        <button class="board__option" id="saveJS" data-section="board" data-value="attr-ariaLabel-save" aria-label="save draw">save</button>
+                    </div>
+                    <div class="wrapper-board-option">
+                        <span class="tooltip" data-section="board" data-value="delete">delete draw</span>
+                        <button class="board__option" id="deleteJS" data-section="board" data-value="attr-ariaLabel-delete" aria-label="delete draw">delete</button>
+                    </div>
+                    <div class="wrapper-board-option">
+                        <span class="tooltip" data-section="board" data-value="resize">resize board</span>
+                        <button class="board__option" id="resizeJS" data-section="board" data-value="attr-ariaLabel-resize" aria-label="resize board">resize</button>
+                    </div>
+                </div>
+                <div class="modal board__modalJS hidden">
+                    <button class="closeJS" data-section="board-resize" data-value="attr-ariaLabel-close" aria-label="close menu">X</button>
+                    <strong class="wrapper-option__title" data-section="board-resize" data-value="head" aria-label="board size">board Sizes</strong>
+                    <div class="wrapper-board-size">
+                        <button class="modal__wrapper-option size-selected b-sizeJS" id="small" data-section="board-resize" data-value="small" aria-label="small">small</button>
+                        <span class="board-size">30x30</span>
+                    </div>
+                    <div class="wrapper-board-size">
+                        <button class="modal__wrapper-option b-sizeJS" id="medium" data-section="board-resize" data-value="medium" aria-label="medium">medium</button>
+                        <span class="board-size">50x65</span>                    
+                    </div>
+                    <div class="wrapper-board-size">
+                        <button class="modal__wrapper-option b-sizeJS" id="big" data-section="board-resize" data-value="big" aria-label="big">big</button>
+                        <span class="board-size">50x80</span>                    
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
-
-    <main class="wrapper-3d board">
-        <section class="wrapper-tools" id="tools">
-            <h2 class="board__tools-title" data-section="tools" data-value="head" aria-label="tools">Tools</h2>
-            <div class="wrapper-tool">
-                <span class="tooltip" data-section="tools" data-value="bucket">bucket</span>
-                <button class="board__option" id="bucket" data-section="tools" data-value="attr-ariaLabel-bucket" aria-label="bucket">bucket</button>
-            </div>
-            <div class="wrapper-tool">
-                <span class="tooltip" data-section="tools" data-value="brush">brush</span>
-                <button class="board__option" id="brush" data-section="tools" data-value="attr-ariaLabel-brush" aria-label="brush">brush</button>
-            </div>
-        </section>
-
-        <section class="wrapper-tools" id="palette">
-            <h2 class="board__tools-title" data-section="palette" data-value="head" aria-label="palette">Palette</h2>
-            <div class="wrapper-palette-options">
-                <span class="tooltip" data-section="palette" data-value="edit">edit colors</span>
-                <button class="board__option" id="color-edit" data-section="palette" data-value="attr-ariaLabel-edit" aria-label="edit colors">edit</button>
-            </div>
-                <span class="tooltip" data-section="palette" data-value="done">done</span>
-                <button class="board__option hidden" id="color-edit-finish" data-section="palette" data-value="attr-ariaLabel-done" aria-label="done">done</button>
-            <div class="wrapper-colors">
-            </div>
-        </section>
-
-        <section class="board wrapper-board">
-            <table id="board"></table>
-            <div class="wrapper-board-settings">
-                <div class="wrapper-board-option">
-                    <span class="tooltip" data-section="board" data-value="save">save draw</span>
-                    <button class="board__option" id="save" data-section="board" data-value="attr-ariaLabel-save" aria-label="save draw">save</button>
-                </div>
-                <div class="wrapper-board-option">
-                    <span class="tooltip" data-section="board" data-value="delete">delete draw</span>
-                    <button class="board__option" id="delete" data-section="board" data-value="attr-ariaLabel-delete" aria-label="delete draw">delete</button>
-                </div>
-                <div class="wrapper-board-option">
-                    <span class="tooltip" data-section="board" data-value="resize">resize board</span>
-                    <button class="board__option" id="resize" data-section="board" data-value="attr-ariaLabel-resize" aria-label="resize board">resize</button>
-                </div>
-            </div>
-            <div class="modal board__modal hidden">
-                <button class="close"data-section="board-resize" data-value="attr-ariaLabel-close" aria-label="close menu">X</button>
-                <strong class="wrapper-option__title" data-section="board-resize" data-value="head" aria-label="board size">board Sizes</strong>
-                <div class="wrapper-board-size">
-                    <button class="modal__wrapper-option size-selected b-size" id="small" data-section="board-resize" data-value="small" aria-label="small">small</button>
-                    <span class="board-size">30x30</span>
-                </div>
-                <div class="wrapper-board-size">
-                    <button class="modal__wrapper-option b-size" id="medium" data-section="board-resize" data-value="medium" aria-label="medium">medium</button>
-                    <span class="board-size">50x65</span>                    
-                </div>
-                <div class="wrapper-board-size">
-                    <button class="modal__wrapper-option b-size" id="big" data-section="board-resize" data-value="big" aria-label="big">big</button>
-                    <span class="board-size">50x80</span>                    
-                </div>
-            </div>
-        </section>
-    </main>
 
     <script src="js/main.js"></script>
     <script src="js/menu.js"></script>

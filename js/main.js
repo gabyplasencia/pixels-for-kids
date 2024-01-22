@@ -1,6 +1,6 @@
-const board = document.getElementById('board');
-const resizeButton = document.getElementById('resize');
-const deleteDraw = document.getElementById('delete');
+const board = document.getElementById('boardJS');
+const resizeButton = document.getElementById('resizeJS');
+const deleteDraw = document.getElementById('deleteJS');
 
 const pixelBoard = {
 
@@ -33,9 +33,9 @@ const pixelBoard = {
     },
 
     changeBoardSize: () => {
-        const resizeMenu = document.querySelector('.board__modal');
-        const closeMenu = resizeMenu.querySelector('.close');
-        const sizeButton = document.querySelectorAll('.b-size');
+        const resizeMenu = document.querySelector('.board__modalJS');
+        const closeMenu = resizeMenu.querySelector('.closeJS');
+        const sizeButton = document.querySelectorAll('.b-sizeJS');
 
         resizeButton.addEventListener('click', () => {
             resizeMenu.classList.remove('hidden');
@@ -91,15 +91,15 @@ const pixelBoard = {
 
     randomPalette: () => {
         const numElements = 16;
-        let wrapperColor = document.querySelector(".wrapper-colors");
+        let wrapperColor = document.querySelector(".wrapper-colorsJS");
         for(let i = 0; i<numElements; i++){
             let label = document.createElement("label");
             let input = document.createElement("input");
-            input.classList.add("colors");
+            input.classList.add("colorsJS");
             label.appendChild(input);
             wrapperColor.appendChild(label);
         }
-        const colorInputs = document.querySelectorAll('.colors');
+        const colorInputs = document.querySelectorAll('.colorsJS');
 
         const getRandomColor = () => {
           const letters = '0123456789ABCDEF';
@@ -117,16 +117,16 @@ const pixelBoard = {
             input.setAttribute('value', setColor);
             input.setAttribute('type', 'button');
         });
-        colorInputs[0].classList.add('color-picked');
-        const wrapper = document.querySelector(".wrapper-colors");
-        let colorPicked = document.querySelector('.color-picked');
+        colorInputs[0].classList.add('color-pickedJS');
+        const wrapper = document.querySelector(".wrapper-colorsJS");
+        let colorPicked = document.querySelector('.color-pickedJS');
         wrapper.dataset.selectedColor = colorPicked.value;
     },
 
     editColors: () => {
-        const editColor = document.getElementById('color-edit');
-        const colorCheck = document.getElementById('color-edit-finish');
-        let palette = document.querySelectorAll('.colors');
+        const editColor = document.getElementById('color-editJS');
+        const colorCheck = document.getElementById('color-edit-finishJS');
+        let palette = document.querySelectorAll('.colorsJS');
 
         let colors = [];
 
@@ -159,17 +159,17 @@ const pixelBoard = {
     },
 
     colorSelection: () => {
-        const palette = document.querySelectorAll('.colors');
-        const wrapper = document.querySelector(".wrapper-colors");
+        const palette = document.querySelectorAll('.colorsJS');
+        const wrapper = document.querySelector(".wrapper-colorsJS");
 
         palette.forEach( color => {
             color.addEventListener('click', (e) => {
                 let selectedColor = e.target;
                 palette.forEach( color => { 
-                    color.classList.remove('color-picked');
+                    color.classList.remove('color-pickedJS');
                     })
-                selectedColor.classList.add('color-picked');
-                if(e.target.classList.contains('color-picked')){
+                selectedColor.classList.add('color-pickedJS');
+                if(e.target.classList.contains('color-pickedJS')){
                     wrapper.dataset.selectedColor = e.target.value;
                 }
             })
@@ -177,8 +177,8 @@ const pixelBoard = {
     },
 
     brush: () => {
-        const wrapper = document.querySelector('.wrapper-colors');
-        const brush = document.getElementById('brush');
+        const wrapper = document.querySelector('.wrapper-colorsJS');
+        const brush = document.getElementById('brushJS');
         document.body.style.cursor = "pointer";
 
         board.addEventListener('dragstart', (e) => {
@@ -187,7 +187,7 @@ const pixelBoard = {
 
         
             const activeDraw = (e) => {
-                if(brush.classList.contains('active-tool')){
+                if(brush.classList.contains('active-toolJS')){
                 if (!e) {
                     return;
                 }
@@ -211,11 +211,11 @@ const pixelBoard = {
     },
 
     bucket: (cell, color) => {
-        const wrapper = document.querySelector(".wrapper-colors");
-        const bucket = document.getElementById('bucket');
+        const wrapper = document.querySelector(".wrapper-colorsJS");
+        const bucket = document.getElementById('bucketJS');
 
         const bucketFill = (startingCell, targetColor) => {
-            if(bucket.classList.contains('active-tool')){
+            if(bucket.classList.contains('active-toolJS')){
             const queue = [startingCell];
             const visited = new Set();
 
@@ -256,17 +256,17 @@ const pixelBoard = {
     },
 
     toolSelector: () => {
-        const tools = document.getElementById('tools');
-        const toolsOptions = tools.querySelectorAll('.board__option');
+        const tools = document.getElementById('toolsJS');
+        const toolsOptions = tools.querySelectorAll('.board__optionJS');
 
         toolsOptions.forEach( tool => {
             tool.addEventListener( 'click', () => {
-                toolsOptions.forEach( tool => {tool.classList.remove('active-tool');});
+                toolsOptions.forEach( tool => {tool.classList.remove('active-toolJS');});
 
-                if(tool.id === 'bucket'){
-                    tool.classList.add('active-tool');
+                if(tool.id === 'bucketJS'){
+                    tool.classList.add('active-toolJS');
                     document.body.style.cursor = "wait";
-                    let selectedColor = document.querySelector('.color-picked');
+                    let selectedColor = document.querySelector('.color-pickedJS');
 
                     if (selectedColor) {
                         currentColor = selectedColor.value;
@@ -277,8 +277,8 @@ const pixelBoard = {
                         });
                     }
                 }
-                if(tool.id === 'brush'){
-                    tool.classList.add('active-tool');
+                if(tool.id === 'brushJS'){
+                    tool.classList.add('active-toolJS');
                     pixelBoard.brush();
                 }
             })
@@ -286,8 +286,8 @@ const pixelBoard = {
     },
 
     save: () => {
-        const board = document.getElementById('board');
-        const saveButton = document.getElementById('save');
+        const board = document.getElementById('boardJS');
+        const saveButton = document.getElementById('saveJS');
 
         function saveTableAsImage() {
             html2canvas(board).then(function(canvas) {
