@@ -53,23 +53,23 @@ const pixelBoard = {
                 pixelBoard.deleteBoard();
                 pixelBoard.createBoard(30);
                 sizeButton.forEach( btn => {
-                    btn.classList.remove('size-selected');
+                    btn.classList.remove('size-selectedJS');
                 })
-                currentBtn.classList.add('size-selected');
+                currentBtn.classList.add('size-selectedJS');
             }else if(currentBtn.id === 'medium'){
                 pixelBoard.deleteBoard();
                 pixelBoard.createBoard(50, 1.3);
                 sizeButton.forEach( btn => {
-                    btn.classList.remove('size-selected');
+                    btn.classList.remove('size-selectedJS');
                 })
-                currentBtn.classList.add('size-selected');
+                currentBtn.classList.add('size-selectedJS');
             }else {
                 pixelBoard.deleteBoard();
                 pixelBoard.createBoard(50, 1.6);
                 sizeButton.forEach( btn => {
-                    btn.classList.remove('size-selected');
+                    btn.classList.remove('size-selectedJS');
                 })
-                currentBtn.classList.add('size-selected');
+                currentBtn.classList.add('size-selectedJS');
             }
         })
     })
@@ -77,7 +77,7 @@ const pixelBoard = {
 
     deleteDraw: () => {
         deleteDraw.addEventListener('click', () => {
-            let selectedSize = document.querySelector('.size-selected').id;
+            let selectedSize = document.querySelector('.size-selectedJS').id;
             pixelBoard.deleteBoard();
             if(selectedSize === 'small'){
                 pixelBoard.createBoard(30);

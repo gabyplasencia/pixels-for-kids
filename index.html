@@ -44,11 +44,11 @@
                 <div class="tools-wrapper">
                     <div class="wrapper-tool">
                         <span class="tooltip" data-section="tools" data-value="bucket">bucket</span>
-                        <button class="board__optionJS" id="bucketJS" data-section="tools" data-value="attr-ariaLabel-bucket" aria-label="bucket">bucket</button>
+                        <button class="board__optionJS" id="bucketJS"><img data-section="tools" data-value="attr-ariaLabel-bucket" aria-label="bucket"src="assets/img/bucket.png"></button>
                     </div>
                     <div class="tools-wrapper">
                         <span class="tooltip" data-section="tools" data-value="brush">brush</span>
-                        <button class="board__optionJS" id="brushJS" data-section="tools" data-value="attr-ariaLabel-brush" aria-label="brush">brush</button>
+                        <button class="board__optionJS" id="brushJS" ><img data-section="tools" data-value="attr-ariaLabel-brush" aria-label="brush" src="assets/img/brush.png"></button>
                     </div>
                 </div>
             </section>
@@ -57,10 +57,10 @@
                 <h2 class="board__tools-title" data-section="palette" data-value="head" aria-label="palette">Palette</h2>
                 <div class="wrapper-palette-options">
                     <span class="tooltip" data-section="palette" data-value="edit">edit colors</span>
-                    <button class="board__option" id="color-editJS" data-section="palette" data-value="attr-ariaLabel-edit" aria-label="edit colors">edit</button>
+                    <button class="board__option" id="color-editJS"><img data-section="palette" data-value="attr-ariaLabel-edit" aria-label="edit colors" src="assets/icons/edit.png"></button>
                 </div>
                     <span class="tooltip" data-section="palette" data-value="done">done</span>
-                    <button class="board__option hidden" id="color-edit-finishJS" data-section="palette" data-value="attr-ariaLabel-done" aria-label="done">done</button>
+                    <button class="board__option hidden" id="color-edit-finishJS"><img data-section="palette" data-value="attr-ariaLabel-done" aria-label="done" src="assets/icons/check.png"></button>
                 <div class="wrapper-colorsJS">
                 </div>
             </section>
@@ -70,31 +70,33 @@
                 <div class="wrapper-board-settings">
                     <div class="wrapper-board-option">
                         <span class="tooltip" data-section="board" data-value="save">save draw</span>
-                        <button class="board__option" id="saveJS" data-section="board" data-value="attr-ariaLabel-save" aria-label="save draw">save</button>
+                        <button class="board__option" id="saveJS"><img data-section="board" data-value="attr-ariaLabel-save" aria-label="save draw" src="assets/img/camera.png"></button>
                     </div>
                     <div class="wrapper-board-option">
                         <span class="tooltip" data-section="board" data-value="delete">delete draw</span>
-                        <button class="board__option" id="deleteJS" data-section="board" data-value="attr-ariaLabel-delete" aria-label="delete draw">delete</button>
+                        <button class="board__option" id="deleteJS"><img data-section="board" data-value="attr-ariaLabel-delete" aria-label="delete draw" src="assets/img/trash.png"></button>
                     </div>
                     <div class="wrapper-board-option">
                         <span class="tooltip" data-section="board" data-value="resize">resize board</span>
-                        <button class="board__option" id="resizeJS" data-section="board" data-value="attr-ariaLabel-resize" aria-label="resize board">resize</button>
+                        <button class="board__option" id="resizeJS"><img data-section="board" data-value="attr-ariaLabel-resize" aria-label="resize board" src="assets/img/resize.png"></button>
                     </div>
                 </div>
                 <div class="modal board__modalJS hidden">
-                    <button class="closeJS" data-section="board-resize" data-value="attr-ariaLabel-close" aria-label="close menu">X</button>
-                    <strong class="wrapper-option__title" data-section="board-resize" data-value="head" aria-label="board size">board Sizes</strong>
-                    <div class="wrapper-board-size">
-                        <button class="modal__wrapper-option size-selected b-sizeJS" id="small" data-section="board-resize" data-value="small" aria-label="small">small</button>
-                        <span class="board-size">30x30</span>
-                    </div>
-                    <div class="wrapper-board-size">
-                        <button class="modal__wrapper-option b-sizeJS" id="medium" data-section="board-resize" data-value="medium" aria-label="medium">medium</button>
-                        <span class="board-size">50x65</span>                    
-                    </div>
-                    <div class="wrapper-board-size">
-                        <button class="modal__wrapper-option b-sizeJS" id="big" data-section="board-resize" data-value="big" aria-label="big">big</button>
-                        <span class="board-size">50x80</span>                    
+                    <button class="closeJS"><img data-section="board-resize" data-value="attr-ariaLabel-close" aria-label="close menu" src="assets/icons/close.png"></button>
+                    <strong class="wrapper-option__title" data-section="board-resize" data-value="head" aria-label="board size">board sizes</strong>
+                    <div class="wrapper-options">
+                        <div class="wrapper-size-option">
+                            <button class="modal__wrapper-option size-selectedJS b-sizeJS" id="small" data-section="board-resize" data-value="small" aria-label="small">small</button>
+                            <span class="board-size">30x30</span>
+                        </div>
+                        <div class="wrapper-size-option">
+                            <button class="modal__wrapper-option b-sizeJS" id="medium" data-section="board-resize" data-value="medium" aria-label="medium">medium</button>
+                            <span class="board-size">50x65</span>                    
+                        </div>
+                        <div class="wrapper-size-option">
+                            <button class="modal__wrapper-option b-sizeJS" id="big" data-section="board-resize" data-value="big" aria-label="big">big</button>
+                            <span class="board-size">50x80</span>                    
+                        </div>
                     </div>
                 </div>
             </section>
