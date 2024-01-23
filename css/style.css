@@ -72,7 +72,15 @@ a {
   margin-block: 1.5rem;
 }
 
-.wrapper-board {
+#logo {
+  justify-self: start;
+}
+
+.wrapper-menu {
+  justify-self: end;
+}
+
+.wrapper-main {
   grid-column: 1/-1;
 }
 
@@ -98,15 +106,14 @@ a {
 }
 
 td {
-  border: 1px solid black;
-  /*rgba(187, 187, 187, 0.233)*/
+  border: 1px solid rgba(0, 0, 0, 0.181);
 }
 
 table {
   border-spacing: 0;
   border-collapse: collapse;
   border: none;
-  background-color: white;
+  background-color: var(--white);
 }
 
 td {
@@ -135,4 +142,8 @@ td {
 
 .menu.hidden {
   display: none;
+}
+
+.wrapper-main {
+  display: flex;
 }/*# sourceMappingURL=style.css.map */

@@ -1,13 +1,12 @@
 td {
-    border: 1px solid black;
-    /*rgba(187, 187, 187, 0.233)*/
+    border: 1px solid rgba(0, 0, 0, 0.181);
 }
 
 table {
     border-spacing: 0;
     border-collapse: collapse;
     border: none;
-    background-color: white;
+    background-color: var(--white);
 }
 
 td {
