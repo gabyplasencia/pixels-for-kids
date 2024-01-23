@@ -41,7 +41,7 @@
         <main class="wrapper-main">
 
             <div class="wrapper-interations">
-                <section class="tools-container" id="toolsJS">
+                <section class="interations-container" id="toolsJS">
                     <h2 class="board__tools-title" data-section="tools" data-value="head" aria-label="tools">Tools</h2>
                     <div class="tools-wrapper">
                         <div class="tooltip-wrapper tooltip-trigger">
@@ -54,21 +54,21 @@
                         </div>
                     </div>
                 </section>
-                <section class="tools-container" id="palette">
-                    <h2 class="board__tools-title" data-section="palette" data-value="head" aria-label="palette">Palette</h2>
-                    <div class="wrapper-palette-options">
-                        <div class="tooltip-wrapper tooltip-trigger">
-                            <span class="tooltip" data-section="palette" data-value="edit">edit</span>
-                            <button class="board__option" id="color-editJS"><img data-section="palette" data-value="attr-ariaLabel-edit" aria-label="edit colors" src="assets/icons/edit.png"></button>
-                        </div>
-                        <div class="tooltip-wrapper tooltip-trigger">
-                            <span class="tooltip" data-section="palette" data-value="done">done</span>
-                            <button class="board__option hidden" id="color-edit-finishJS"><img data-section="palette" data-value="attr-ariaLabel-done" aria-label="done" src="assets/icons/check.png"></button>
+                <section class="interations-container" id="palette">
+                    <div class="palette__head">
+                        <h2 class="board__tools-title" data-section="palette" data-value="head" aria-label="palette">Palette</h2>
+                        <div class="wrapper-palette-options">
+                            <div class="tooltip-wrapper tooltip-trigger">
+                                <span class="tooltip" data-section="palette" data-value="edit">edit</span>
+                                <button class="board__option" id="color-editJS"><img class="palette-btn" data-section="palette" data-value="attr-ariaLabel-edit" aria-label="edit colors" src="assets/icons/edit.png"></button>
+                            </div>
+                            <div class="tooltip-wrapper tooltip-trigger">
+                                <span class="tooltip" data-section="palette" data-value="done">done</span>
+                                <button class="board__option hidden" id="color-edit-finishJS"><img class="palette-btn" data-section="palette" data-value="attr-ariaLabel-done" aria-label="done" src="assets/icons/check.png"></button>
+                            </div>
                         </div>
                     </div>
-
                     <div class="wrapper-colorsJS"></div>
-
                 </section>
             </div>
 

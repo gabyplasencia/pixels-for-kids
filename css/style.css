@@ -67,7 +67,7 @@ a {
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 90%;
+  width: 95%;
   margin-inline: auto;
   margin-block: 1.5rem;
 }
@@ -95,6 +95,7 @@ a {
   top: -35%;
   left: 40px;
   opacity: 0;
+  font-size: 1px;
   transform-origin: left bottom;
   background-color: var(--purple);
   color: var(--white);
@@ -102,11 +103,12 @@ a {
   padding: 0.2rem 0.5rem;
   width: -moz-max-content;
   width: max-content;
-  transition: 100ms ease 400ms;
+  transition: all 100ms ease 600ms;
 }
 
 .tooltip-trigger:hover .tooltip {
   opacity: 1;
+  font-size: var(--fs-000);
 }
 
 :root {
@@ -126,6 +128,7 @@ a {
   --main-font: "Pixelify Sans", sans-serif;
   --fw-regular: 400;
   --fw-semibold: 600;
+  --fs-000: 1rem;
   --fs-100: 1.2rem;
   --fs-200: 2rem;
   --fs-300: 2.2rem;
@@ -147,12 +150,32 @@ td {
   width: 10px;
 }
 
+.wrapper-board {
+  margin-block: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  border: 1px solid gray;
+}
+
+#boardJS {
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
 .modal.hidden {
   display: none;
 }
 
 .board__option.hidden {
   display: none;
+}
+
+.board__settings {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .menu {
@@ -172,4 +195,44 @@ td {
 
 .wrapper-main {
   display: flex;
+  place-content: center;
+  margin-block: 2rem;
+  border: 1px solid black;
+}
+
+.wrapper-interations {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border: 1px solid purple;
+}
+
+.interations-container {
+  padding: 0.5rem 1rem;
+  margin-block: 2rem;
+  border: 1px solid red;
+}
+
+.tools-wrapper {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.palette__head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.palette-btn {
+  height: 2rem;
+  aspect-ratio: 1;
+}
+
+.wrapper-colorsJS {
+  margin-block: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
 }/*# sourceMappingURL=style.css.map */

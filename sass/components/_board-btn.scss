@@ -5,3 +5,9 @@
 .board__option.hidden {
     display: none;
 }
+
+.board__settings {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}

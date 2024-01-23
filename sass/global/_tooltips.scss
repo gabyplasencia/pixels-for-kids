@@ -9,15 +9,17 @@
     left: 40px;
 
     opacity: 0;
+    font-size: 1px;
     transform-origin: left bottom;
     background-color: var(--purple);
     color: var(--white);
     text-align: center;
     padding: 0.2rem 0.5rem;
     width: max-content;
-    transition: 100ms ease 400ms;
+    transition: all 100ms ease 600ms;
 }
 
 .tooltip-trigger:hover .tooltip {
     opacity: 1;
+    font-size: var(--fs-000);
 }
