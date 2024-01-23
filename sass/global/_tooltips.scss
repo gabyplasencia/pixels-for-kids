@@ -1,0 +1,23 @@
+.tooltip-wrapper {
+    position: relative;
+    width: fit-content;
+}
+
+.tooltip {
+    position: absolute;
+    top: -35%;
+    left: 40px;
+
+    opacity: 0;
+    transform-origin: left bottom;
+    background-color: var(--purple);
+    color: var(--white);
+    text-align: center;
+    padding: 0.2rem 0.5rem;
+    width: max-content;
+    transition: 100ms ease 400ms;
+}
+
+.tooltip-trigger:hover .tooltip {
+    opacity: 1;
+}

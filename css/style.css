@@ -84,6 +84,31 @@ a {
   grid-column: 1/-1;
 }
 
+.tooltip-wrapper {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.tooltip {
+  position: absolute;
+  top: -35%;
+  left: 40px;
+  opacity: 0;
+  transform-origin: left bottom;
+  background-color: var(--purple);
+  color: var(--white);
+  text-align: center;
+  padding: 0.2rem 0.5rem;
+  width: -moz-max-content;
+  width: max-content;
+  transition: 100ms ease 400ms;
+}
+
+.tooltip-trigger:hover .tooltip {
+  opacity: 1;
+}
+
 :root {
   --light-green: #E3FFCD;
   --blue: #4397FB;
@@ -94,6 +119,7 @@ a {
   --white: #FFFFFF;
   --dark-brown: #583900;
   --light-yellow: #F6FECC;
+  --purple: #8843CC;
 }
 
 :root {
