@@ -1,0 +1,50 @@
+@use "../util/" as u;
+
+.wrapper-modal {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 3;
+}
+
+.modal {
+    position: relative;
+    padding: 1.5rem;
+    border: 6px solid var(--brown);
+    border-radius: 15px;
+    background-color: var(--light-brown);
+    box-shadow: 6px 6px 15px 2px rgba(128, 128, 128, 0.288);
+}
+
+.modal > button {
+    height: 35px;
+    aspect-ratio: 1;
+    position: absolute;
+    top: -5%;
+    left: 85%;
+}
+
+.modal__options {
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include u.neumorphism(var(--light-brown), rgb(76, 44, 22), rgb(255, 216, 191));
+}
+
+.modal__title {
+    color: var(--white);
+    font-size: var(--fs-200);
+    font-weight: var(--fw-regular);
+    letter-spacing: 2.4px;
+    text-shadow: 4px 4px 1px rgba(76, 44, 22, 0.495);
+}
+
+.laguage__options,
+.music__options {
+    margin-top: 0.8rem;
+    display: flex;
+    gap: 0.5rem;
+}

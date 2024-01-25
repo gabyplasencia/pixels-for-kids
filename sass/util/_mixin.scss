@@ -1,8 +1,8 @@
-@mixin neumorphism($in-shadow, $in-light, $out-shadow, $out-light) {
-    border: 6px solid var(--light-blue);
+@mixin neumorphism($border-color, $shadow, $light) {
+    border: 6px solid $border-color;
     border-radius: 0.9rem;
-    box-shadow: inset 4px 4px 15px -12px $in-shadow,
-                inset -4px -4px 13px -6px $in-light,
-                3px 3px 13px -9px $out-shadow,
-                -3px -3px 11px -3px $out-light;
+    box-shadow: inset 4px 4px 15px -12px $shadow,
+                inset -4px -4px 13px -6px $light,
+                3px 3px 13px -9px $shadow,
+                -3px -3px 11px -3px $light;
 }

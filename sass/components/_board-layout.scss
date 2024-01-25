@@ -25,7 +25,7 @@
     width: fit-content;
     color: var(--dark-blue);
     padding: 1rem 1rem;
-    @include u.neumorphism(rgb(19, 47, 69), rgb(194, 231, 255), rgb(19, 47, 69), rgb(194, 231, 255));
+    @include u.neumorphism(var(--light-blue), rgb(19, 47, 69), rgb(194, 231, 255));
 }
 
 .tools-wrapper {
