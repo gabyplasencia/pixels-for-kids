@@ -1,3 +1,5 @@
+@use "../util/" as u;
+
 .wrapper-main {
     display: flex;
     gap: 2rem;
@@ -19,14 +21,10 @@
 }
 
 .interations-container {
+    width: fit-content;
     color: var(--dark-blue);
     padding: 0.5rem 1rem;
-    border: 6px solid var(--light-blue);
-    border-radius: 0.9rem;
-    box-shadow: inset 4px 4px 10px -7px rgb(19, 47, 69),
-                inset -4px -4px 10px -3px rgb(194, 231, 255),
-                3px 3px 10px -6px rgb(19, 47, 69),
-                -3px -3px 10px -1px rgb(194, 231, 255);
+    @include u.neumorphism(rgb(19, 47, 69), rgb(194, 231, 255), rgb(19, 47, 69), rgb(194, 231, 255))
 }
 
 .tools-wrapper {

@@ -105,7 +105,7 @@ a {
   padding: 0.2rem 0.5rem;
   width: -moz-max-content;
   width: max-content;
-  transition: all 100ms ease 600ms;
+  transition: all 100ms ease 800ms;
 }
 
 .tooltip-trigger:hover .tooltip {
@@ -214,11 +214,13 @@ td {
 }
 
 .interations-container {
+  width: -moz-fit-content;
+  width: fit-content;
   color: var(--dark-blue);
   padding: 0.5rem 1rem;
   border: 6px solid var(--light-blue);
   border-radius: 0.9rem;
-  box-shadow: inset 4px 4px 10px -7px rgb(19, 47, 69), inset -4px -4px 10px -3px rgb(194, 231, 255), 3px 3px 10px -6px rgb(19, 47, 69), -3px -3px 10px -1px rgb(194, 231, 255);
+  box-shadow: inset 4px 4px 15px -12px rgb(19, 47, 69), inset -4px -4px 13px -6px rgb(194, 231, 255), 3px 3px 13px -9px rgb(19, 47, 69), -3px -3px 11px -3px rgb(194, 231, 255);
 }
 
 .tools-wrapper {
