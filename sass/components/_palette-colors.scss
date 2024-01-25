@@ -1,0 +1,47 @@
+$border-radius: 10px;
+@mixin colors-shape {
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+    border-radius: $border-radius;
+}
+
+.wrapper-colorsJS {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+input[type=button] {
+    @include colors-shape();
+}
+
+input[type=color] {
+    @include colors-shape();
+}
+
+input::-webkit-color-swatch {
+    border: none;
+}
+
+label {
+    position: relative;
+}
+
+.color-border {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    scale: 1.1;
+}
+
+#palette {
+    transition: background-color 300ms ease;
+}
+
+#palette.edit-active {
+    background-color: var(--light-yellow);
+}

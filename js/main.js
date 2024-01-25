@@ -95,8 +95,12 @@ const pixelBoard = {
         for(let i = 0; i<numElements; i++){
             let label = document.createElement("label");
             let input = document.createElement("input");
+            let img = document.createElement("img");
+            img.src = "assets/img/color-border.png";
+            img.classList.add('color-border');
             input.classList.add("colorsJS");
             label.appendChild(input);
+            label.appendChild(img);
             wrapperColor.appendChild(label);
         }
         const colorInputs = document.querySelectorAll('.colorsJS');
@@ -124,6 +128,7 @@ const pixelBoard = {
     },
 
     editColors: () => {
+        const wrapperPalette = document.getElementById('palette');
         const editColor = document.getElementById('color-editJS');
         const colorCheck = document.getElementById('color-edit-finishJS');
         let palette = document.querySelectorAll('.colorsJS');
@@ -133,6 +138,7 @@ const pixelBoard = {
         editColor.addEventListener('click', () => {
             colorCheck.classList.remove('hidden');
             editColor.classList.add('hidden');
+            wrapperPalette.classList.add('edit-active');
 
             palette.forEach( color => {
                 colors.push(color.value);
@@ -151,6 +157,7 @@ const pixelBoard = {
         colorCheck.addEventListener('click', () => {
             editColor.classList.remove('hidden');
             colorCheck.classList.add('hidden');
+            wrapperPalette.classList.remove('edit-active');
 
             palette.forEach( color => {
                 color.setAttribute('type', 'button');

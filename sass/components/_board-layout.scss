@@ -17,14 +17,15 @@
 .wrapper-interations {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
     justify-content: space-between;
 }
 
 .interations-container {
     width: fit-content;
     color: var(--dark-blue);
-    padding: 0.5rem 1rem;
-    @include u.neumorphism(rgb(19, 47, 69), rgb(194, 231, 255), rgb(19, 47, 69), rgb(194, 231, 255))
+    padding: 1rem 1rem;
+    @include u.neumorphism(rgb(19, 47, 69), rgb(194, 231, 255), rgb(19, 47, 69), rgb(194, 231, 255));
 }
 
 .tools-wrapper {
@@ -36,16 +37,10 @@
 .palette__head {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 0.8rem;
 }
 
 .palette-btn {
     height: 2rem;
     aspect-ratio: 1;
-}
-
-.wrapper-colorsJS {
-    margin-block: 1rem;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.5rem;
 }
