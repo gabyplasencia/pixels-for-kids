@@ -61,6 +61,13 @@ button {
     border: none;
     background: none;
     text-transform: capitalize;
+    cursor: pointer;
+    transition: all 100ms ease;
+}
+
+button:active {
+    opacity: 0.7;
+    transform: scale(0.97);
 }
 
 a {

@@ -186,7 +186,7 @@ const pixelBoard = {
     brush: () => {
         const wrapper = document.querySelector('.wrapper-colorsJS');
         const brush = document.getElementById('brushJS');
-        document.body.style.cursor = "pointer";
+        //document.body.style.cursor = "pointer";
 
         board.addEventListener('dragstart', (e) => {
             e.preventDefault();
@@ -272,7 +272,7 @@ const pixelBoard = {
 
                 if(tool.id === 'bucketJS'){
                     tool.classList.add('active-toolJS');
-                    document.body.style.cursor = "wait";
+                    //document.body.style.cursor = "wait";
                     let selectedColor = document.querySelector('.color-pickedJS');
 
                     if (selectedColor) {
