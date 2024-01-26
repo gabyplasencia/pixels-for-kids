@@ -39,6 +39,7 @@ body {
   line-height: 1.4;
   height: 100vh;
   overflow-x: hidden;
+  text-transform: capitalize;
 }
 
 img,
@@ -50,18 +51,20 @@ picture {
 input,
 button,
 textarea,
+a,
 select {
   font: inherit;
+  color: inherit;
 }
 
 button {
   border: none;
   background: none;
+  text-transform: capitalize;
 }
 
 a {
   text-decoration: none;
-  color: inherit;
 }
 
 .container {
@@ -105,7 +108,7 @@ a {
   padding: 0.2rem 0.5rem;
   width: -moz-max-content;
   width: max-content;
-  transition: all 100ms ease 800ms;
+  transition: all 100ms ease 1000ms;
 }
 
 .tooltip-trigger:hover .tooltip {
@@ -316,7 +319,7 @@ label {
 }
 
 .modal__options {
-  padding: 1rem;
+  padding: 0.7rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -339,4 +342,22 @@ label {
   margin-top: 0.8rem;
   display: flex;
   gap: 0.5rem;
+}
+
+.modal__language {
+  margin-bottom: 0.7rem;
+}
+
+.music__options {
+  font-size: var(--fs-200);
+  font-weight: var(--fw-semibold);
+  color: var(--dark-brown);
+}
+
+.music__options > img {
+  margin-inline: 0.5rem;
+}
+
+#icon-on {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

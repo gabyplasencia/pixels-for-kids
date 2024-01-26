@@ -26,7 +26,7 @@
 }
 
 .modal__options {
-    padding: 1rem;
+    padding: 0.7rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -48,3 +48,23 @@
     display: flex;
     gap: 0.5rem;
 }
+
+.modal__language {
+    margin-bottom: 0.7rem;
+}
+
+.music__options{
+    font-size: var(--fs-200);
+    font-weight: var(--fw-semibold);
+    color: var(--dark-brown);
+}
+
+.music__options > img {
+    margin-inline: 0.5rem;
+}
+
+#icon-on {
+    display: none;
+}
+
+//ANIMACION PARA CUANDO PRESIONAS UNA OPCION************    

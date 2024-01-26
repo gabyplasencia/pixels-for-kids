@@ -39,6 +39,7 @@ body {
     line-height: 1.4;
     height: 100vh;
     overflow-x: hidden;
+    text-transform: capitalize;
 }
 
 img,
@@ -50,16 +51,18 @@ picture {
 input,
 button,
 textarea,
+a,
 select {
     font: inherit;
+    color: inherit;
 }
 
 button {
     border: none;
     background: none;
+    text-transform: capitalize;
 }
 
 a {
     text-decoration: none;
-    color: inherit;
 }
