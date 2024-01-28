@@ -1,12 +1,11 @@
 .menu {
-    padding: 0;
     color: var(--white);
     background-color: var(--brown);
     border: 6px solid var(--light-brown);
-    padding-inline: 0.5rem;
+    padding: 0.5rem 1.7rem;
     font-weight: var(--fw-semibold);
-    letter-spacing: 5px;
-    font-size: var(--fs-200);
+    letter-spacing: 6px;
+    font-size: var(--fs-300);
 }
 
 .menu.hidden {

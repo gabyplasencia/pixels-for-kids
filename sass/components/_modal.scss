@@ -10,7 +10,7 @@
 
 .modal {
     position: relative;
-    padding: 1.5rem;
+    padding: 2rem;
     border: 6px solid var(--brown);
     border-radius: 15px;
     background-color: var(--light-brown);
@@ -19,11 +19,13 @@
 }
 
 .modal > button {
-    height: 35px;
+    $height-close: 50px;
+    height: $height-close;
     aspect-ratio: 1;
-    position: absolute;
-    top: -5%;
-    left: 85%;
+    position: absolute; 
+    //the 6px are the modal border thickness 
+    top: (($height-close + 6px) / 2.5) * -1;
+    right: (($height-close + 6px) / 2.5) * -1;
 }
 
 .modal__options {
@@ -51,7 +53,7 @@
 }
 
 .modal__language {
-    margin-bottom: 0.7rem;
+    margin-bottom: 1rem;
 }
 
 .music__options{

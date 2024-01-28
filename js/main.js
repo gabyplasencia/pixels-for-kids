@@ -36,13 +36,16 @@ const pixelBoard = {
         const resizeMenu = document.querySelector('.board__modalJS');
         const closeMenu = resizeMenu.querySelector('.closeJS');
         const sizeButton = document.querySelectorAll('.b-sizeJS');
+        const container = document.querySelector('.container');
 
         resizeButton.addEventListener('click', () => {
             resizeMenu.classList.remove('hidden');
+            container.style.filter = 'blur(10px)';
         })
 
         closeMenu.addEventListener('click', () => {
             resizeMenu.classList.add('hidden');
+            container.style.filter = 'blur(0px)';
         })
 
         sizeButton.forEach( btn => {

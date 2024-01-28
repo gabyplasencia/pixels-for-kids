@@ -70,8 +70,8 @@ button:active {
   transform: scale(0.97);
 }
 
-a {
-  text-decoration: none;
+.container {
+  transition: filter 100ms ease-out;
 }
 
 .container {
@@ -86,8 +86,9 @@ a {
   justify-self: start;
 }
 
-.wrapper-menu {
+.menu {
   justify-self: end;
+  align-self: flex-start;
 }
 
 .wrapper-main {
@@ -189,14 +190,13 @@ td {
 }
 
 .menu {
-  padding: 0;
   color: var(--white);
   background-color: var(--brown);
   border: 6px solid var(--light-brown);
-  padding-inline: 0.5rem;
+  padding: 0.5rem 1.7rem;
   font-weight: var(--fw-semibold);
-  letter-spacing: 5px;
-  font-size: var(--fs-200);
+  letter-spacing: 6px;
+  font-size: var(--fs-300);
 }
 
 .menu.hidden {
@@ -308,7 +308,7 @@ label {
 
 .modal {
   position: relative;
-  padding: 1.5rem;
+  padding: 2rem;
   border: 6px solid var(--brown);
   border-radius: 15px;
   background-color: var(--light-brown);
@@ -317,11 +317,11 @@ label {
 }
 
 .modal > button {
-  height: 35px;
+  height: 50px;
   aspect-ratio: 1;
   position: absolute;
-  top: -5%;
-  left: 85%;
+  top: -22.4px;
+  right: -22.4px;
 }
 
 .modal__options {
@@ -351,7 +351,7 @@ label {
 }
 
 .modal__language {
-  margin-bottom: 0.7rem;
+  margin-bottom: 1rem;
 }
 
 .music__options {
