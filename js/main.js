@@ -37,6 +37,10 @@ const pixelBoard = {
         const closeMenu = resizeMenu.querySelector('.closeJS');
         const sizeButton = document.querySelectorAll('.b-sizeJS');
         const container = document.querySelector('.container');
+        const wrapperMain = document.querySelector('.wrapper-main');
+        const wrapperInte = document.querySelector('.wrapper-interations');
+        const toolsWrapper = document.querySelector('.tools-wrapper');
+        const gridColors = document.querySelector('.wrapper-colorsJS');
 
         resizeButton.addEventListener('click', () => {
             resizeMenu.classList.remove('hidden');
@@ -53,8 +57,22 @@ const pixelBoard = {
             let currentBtn = e.target;
 
             if(currentBtn.id === 'small'){
+                let currentWidth = window.innerWidth;
                 pixelBoard.deleteBoard();
                 pixelBoard.createBoard(30);
+                if(currentWidth > 1200) {
+                    wrapperMain.style.flexDirection = "row";
+                    wrapperInte.style.flexDirection = "column";
+                    toolsWrapper.style.flexDirection = "row";
+                    gridColors.style.gridTemplateColumns = "repeat(4, 1fr)";
+                    console.log('menos de mil')
+                }else if (currentWidth < 1200){
+                    wrapperMain.style.flexDirection = "column";
+                    wrapperInte.style.flexDirection = "row";
+                    toolsWrapper.style.flexDirection = "column";
+                    gridColors.style.gridTemplateColumns = "repeat(8, 1fr)";
+                    console.log('mas de mil')
+                }
                 sizeButton.forEach( btn => {
                     btn.classList.remove('size-selectedJS');
                 })
@@ -62,6 +80,10 @@ const pixelBoard = {
             }else if(currentBtn.id === 'medium'){
                 pixelBoard.deleteBoard();
                 pixelBoard.createBoard(50, 1.3);
+                wrapperMain.style.flexDirection = "column";
+                wrapperInte.style.flexDirection = "row";
+                toolsWrapper.style.flexDirection = "column";
+                gridColors.style.gridTemplateColumns = "repeat(8, 1fr)";
                 sizeButton.forEach( btn => {
                     btn.classList.remove('size-selectedJS');
                 })
@@ -69,6 +91,10 @@ const pixelBoard = {
             }else {
                 pixelBoard.deleteBoard();
                 pixelBoard.createBoard(50, 1.6);
+                wrapperMain.style.flexDirection = "column";
+                wrapperInte.style.flexDirection = "row";
+                toolsWrapper.style.flexDirection = "column";
+                gridColors.style.gridTemplateColumns = "repeat(8, 1fr)";
                 sizeButton.forEach( btn => {
                     btn.classList.remove('size-selectedJS');
                 })

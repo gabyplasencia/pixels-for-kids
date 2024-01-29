@@ -1,9 +1,14 @@
+@use "../util/" as u;
+
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 90%;
+    width: 95%;
     margin-inline: auto;
     margin-block: 1.5rem;
+    @include u.media() {
+        width: 100%;
+    }
 }
 
 #logo {
@@ -19,4 +24,16 @@
     grid-column: 1 / -1;
     justify-self: center;
     padding: 2rem;
+    @include u.media() {
+        padding: 0.8rem;
+    }
+}
+
+.btn {
+    height: 65px;
+    width: 65px;
+    @include u.media() {
+        height: 50px;
+        width: 50px;
+    }
 }

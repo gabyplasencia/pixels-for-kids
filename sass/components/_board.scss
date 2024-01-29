@@ -1,8 +1,12 @@
+@use "../util/" as u;
+
 td {
     border: 1px solid rgba(0, 0, 0, 0.181);
 }
 
 table {
+    min-width: fit-content;
+    height: fit-content;
     border-spacing: 0;
     border-collapse: collapse;
     border: none;
@@ -10,13 +14,17 @@ table {
 }
 
 td {
-    height: 10px;
-    width: 10px;
+    height: 12px;
+    width: 12px;
 }
 
 .wrapper-board {
     display: flex;
     gap: 1.5rem;
+    @include u.media() {
+        gap: 0.2rem;
+        flex-direction: column-reverse;
+    }
 }
 
 #boardJS {

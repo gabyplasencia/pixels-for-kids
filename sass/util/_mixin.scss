@@ -6,3 +6,9 @@
                 3px 3px 13px -9px $shadow,
                 -3px -3px 11px -3px $light;
 }
+
+@mixin media ($width: 1200px) {
+    @media (max-width: $width) {
+        @content;
+    }
+}

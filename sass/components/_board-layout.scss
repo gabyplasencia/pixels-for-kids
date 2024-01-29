@@ -12,12 +12,25 @@
                 -3px -3px 10px -1px rgb(234, 255, 215);
     border-radius: 0.7rem;
     background-color: var(--light-blue);
+    @include u.media() {
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
 
 .wrapper-interations {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    @include u.media() {
+        flex-direction: row;
+    }
+}
+
+.wrapper-board {
+    @include u.media() {
+        align-self: center;
+    }
 }
 
 .interations-container {
@@ -31,15 +44,22 @@
     display: flex;
     gap: 0.8rem;
     margin-top: 0.5rem;
+    @include u.media() {
+        flex-direction: column;
+    }
 }
 
 .palette__head {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 0.8rem;
 }
 
 .palette-btn {
-    height: 2rem;
+    height: 40px;
     aspect-ratio: 1;
+    @include u.media() {
+        height: 32px;
+    }
 }
