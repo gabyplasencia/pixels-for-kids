@@ -7,11 +7,13 @@
         "music": [
                     {"music" :"music"}, 
                     {"attr-ariaLabel-music":"music"}],
-        "attr-ariaLabel-en": "english",
-        "attr-ariaLabel-es": "spanish",
+        "attr-alt-en": "english",
+        "attr-alt-es": "spanish",
         "attr-ariaLabel-music_on":"music on",
         "attr-ariaLabel-music_off":"music off",
-        "attr-ariaLabel-close": "close menu"
+        "attr-alt-music_on_icon": "music on icon",
+        "attr-alt-music_off_icon": "music off icon",
+        "attr-alt-close": "close menu"
     },
 
     "tools": {
@@ -19,9 +21,9 @@
                 {"tools" :"tools"}, 
                 {"attr-ariaLabel-tools":"tools"}],
         "bucket": "bucket",
-        "attr-ariaLabel-bucket": "bucket",
+        "attr-alt-bucket": "bucket",
         "brush": "brush",
-        "attr-ariaLabel-brush": "brush"
+        "attr-alt-brush": "brush"
     },
 
     "palette": {
@@ -29,18 +31,18 @@
                 {"palette" :"palette"}, 
                 {"attr-ariaLabel-palette":"palette"}],
         "edit": "edit colors",
-        "attr-ariaLabel-edit": "edit colors",
+        "attr-alt-edit": "edit colors",
         "done": "done",
-        "attr-ariaLabel-done": "done"
+        "attr-alt-done": "done"
     },
 
     "board": {
         "save": "save draw",
-        "attr-ariaLabel-save": "save draw",
+        "attr-alt-save": "save draw",
         "delete": "delete draw",
-        "attr-ariaLabel-delete": "delete draw",
+        "attr-alt-delete": "delete draw",
         "resize": "resize board",
-        "attr-ariaLabel-resize": "resize board"
+        "attr-alt-resize": "resize board"
     },
 
     "board-resize": {

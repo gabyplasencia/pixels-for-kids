@@ -2,17 +2,19 @@
     "menu": {
         "head": "menú",
         "language": [
-                    {"language" :"idioma"}, 
-                    {"attr-ariaLabel-language":"idioma"}
+                    {"language" : "idioma"}, 
+                    {"attr-ariaLabel-language": "idioma"}
                 ],
         "music": [
-                    {"music" :"música"},  
-                    {"attr-ariaLabel-music":"música"}],
-        "attr-ariaLabel-en":"inglés",
-        "attr-ariaLabel-es":"español",
-        "attr-ariaLabel-music_on":"encender música",
-        "attr-ariaLabel-music_off":"apagar música",
-        "attr-ariaLabel-close": "cerrar el menú"
+                    {"music" : "música"},  
+                    {"attr-ariaLabel-music": "música"}],
+        "attr-alt-en": "inglés",
+        "attr-alt-es": "español",
+        "attr-ariaLabel-music_on": "encender música",
+        "attr-ariaLabel-music_off": "apagar música",
+        "attr-alt-music_on_icon": "icono música encendida",
+        "attr-alt-music_off_icon": "icono música apagada",
+        "attr-alt-close": "cerrar el menú"
     },
 
     "tools": {
@@ -20,9 +22,9 @@
                 {"tools" :"herramientas"}, 
                 {"attr-ariaLabel-tools":"herramientas"}],
         "bucket": "cubo de pintura",
-        "attr-ariaLabel-bucket": "cubo de pintura",
+        "attr-alt-bucket": "cubo de pintura",
         "brush": "pincel",
-        "attr-ariaLabel-brush": "pincel"
+        "attr-alt-brush": "pincel"
     },
 
     "palette": {
@@ -30,18 +32,18 @@
                 {"palette" :"paleta"}, 
                 {"attr-ariaLabel-palette":"paleta de colores"}],
         "edit": "editar colores",
-        "attr-ariaLabel-edit": "editar colores",
+        "attr-alt-edit": "editar colores",
         "done": "hecho",
-        "attr-ariaLabel-done": "hecho"
+        "attr-alt-done": "hecho"
     },
 
     "board": {
         "save": "guardar dibujo",
-        "attr-ariaLabel-save": "guardar dibujo",
+        "attr-alt-save": "guardar dibujo",
         "delete": "borrar dibujo",
-        "attr-ariaLabel-delete": "borrar dibujo",
+        "attr-alt-delete": "borrar dibujo",
         "resize": "tamaño de pizarra",
-        "attr-ariaLabel-resize": "tamaño de pizarra"
+        "attr-alt-resize": "tamaño de pizarra"
     },
 
     "board-resize": {
