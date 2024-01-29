@@ -54,51 +54,61 @@ const pixelBoard = {
 
         sizeButton.forEach( btn => {
         btn.addEventListener('click', (e) => {
-            let currentBtn = e.target;
+            let currentLng = document.querySelector('.current-languageJS');
+            let confirmEN = "The board size will change and the current draw will be delete ¿Do you want to continue?";
+            let confirmES = "La pizarra cambiará de tamaño y el dibujo actual se borrará ¿Deseas continuar?";
+            let consent;
 
-            if(currentBtn.id === 'small'){
-                let currentWidth = window.innerWidth;
-                pixelBoard.deleteBoard();
-                pixelBoard.createBoard(30);
-                if(currentWidth > 1200) {
-                    wrapperMain.style.flexDirection = "row";
-                    wrapperInte.style.flexDirection = "column";
-                    toolsWrapper.style.flexDirection = "row";
-                    gridColors.style.gridTemplateColumns = "repeat(4, 1fr)";
-                    console.log('menos de mil')
-                }else if (currentWidth < 1200){
+            if(currentLng.id == "en"){
+                consent = window.confirm(confirmEN);
+            }else if(currentLng.id == "es") {
+                consent = window.confirm(confirmES);
+            }
+
+            if(consent == true) {
+                let currentBtn = e.target;
+                if(currentBtn.id === 'small'){
+                    let currentWidth = window.innerWidth;
+                    pixelBoard.deleteBoard();
+                    pixelBoard.createBoard(30);
+                    if(currentWidth > 1200) {
+                        wrapperMain.style.flexDirection = "row";
+                        wrapperInte.style.flexDirection = "column";
+                        toolsWrapper.style.flexDirection = "row";
+                        gridColors.style.gridTemplateColumns = "repeat(4, 1fr)";
+                    }else if (currentWidth < 1200){
+                        wrapperMain.style.flexDirection = "column";
+                        wrapperInte.style.flexDirection = "row";
+                        toolsWrapper.style.flexDirection = "column";
+                        gridColors.style.gridTemplateColumns = "repeat(8, 1fr)";
+                    }
+                    sizeButton.forEach( btn => {
+                        btn.classList.remove('size-selectedJS');
+                    })
+                    currentBtn.classList.add('size-selectedJS');
+                }else if(currentBtn.id === 'medium'){
+                    pixelBoard.deleteBoard();
+                    pixelBoard.createBoard(50, 1.3);
                     wrapperMain.style.flexDirection = "column";
                     wrapperInte.style.flexDirection = "row";
                     toolsWrapper.style.flexDirection = "column";
                     gridColors.style.gridTemplateColumns = "repeat(8, 1fr)";
-                    console.log('mas de mil')
+                    sizeButton.forEach( btn => {
+                        btn.classList.remove('size-selectedJS');
+                    })
+                    currentBtn.classList.add('size-selectedJS');
+                }else {
+                    pixelBoard.deleteBoard();
+                    pixelBoard.createBoard(50, 1.6);
+                    wrapperMain.style.flexDirection = "column";
+                    wrapperInte.style.flexDirection = "row";
+                    toolsWrapper.style.flexDirection = "column";
+                    gridColors.style.gridTemplateColumns = "repeat(8, 1fr)";
+                    sizeButton.forEach( btn => {
+                        btn.classList.remove('size-selectedJS');
+                    })
+                    currentBtn.classList.add('size-selectedJS');
                 }
-                sizeButton.forEach( btn => {
-                    btn.classList.remove('size-selectedJS');
-                })
-                currentBtn.classList.add('size-selectedJS');
-            }else if(currentBtn.id === 'medium'){
-                pixelBoard.deleteBoard();
-                pixelBoard.createBoard(50, 1.3);
-                wrapperMain.style.flexDirection = "column";
-                wrapperInte.style.flexDirection = "row";
-                toolsWrapper.style.flexDirection = "column";
-                gridColors.style.gridTemplateColumns = "repeat(8, 1fr)";
-                sizeButton.forEach( btn => {
-                    btn.classList.remove('size-selectedJS');
-                })
-                currentBtn.classList.add('size-selectedJS');
-            }else {
-                pixelBoard.deleteBoard();
-                pixelBoard.createBoard(50, 1.6);
-                wrapperMain.style.flexDirection = "column";
-                wrapperInte.style.flexDirection = "row";
-                toolsWrapper.style.flexDirection = "column";
-                gridColors.style.gridTemplateColumns = "repeat(8, 1fr)";
-                sizeButton.forEach( btn => {
-                    btn.classList.remove('size-selectedJS');
-                })
-                currentBtn.classList.add('size-selectedJS');
             }
         })
     })
@@ -107,13 +117,26 @@ const pixelBoard = {
     deleteDraw: () => {
         deleteDraw.addEventListener('click', () => {
             let selectedSize = document.querySelector('.size-selectedJS').id;
-            pixelBoard.deleteBoard();
-            if(selectedSize === 'small'){
-                pixelBoard.createBoard(30);
-            }else if(selectedSize === 'medium'){
-                pixelBoard.createBoard(50, 1.3);
-            }else {
-                pixelBoard.createBoard(50, 1.6);
+            let currentLng = document.querySelector('.current-languageJS');
+            let confirmEN = "The draw will be delete ¿Do you want to continue?";
+            let confirmES = "El dibujo se borrará ¿Deseas continuar?";
+            let consent;
+            
+            if(currentLng.id == "en"){
+                consent = window.confirm(confirmEN);
+            }else if(currentLng.id == "es") {
+                consent = window.confirm(confirmES);
+            }
+    
+            if(consent == true) {
+                pixelBoard.deleteBoard();
+                if(selectedSize === 'small'){
+                    pixelBoard.createBoard(30);
+                }else if(selectedSize === 'medium'){
+                    pixelBoard.createBoard(50, 1.3);
+                }else {
+                    pixelBoard.createBoard(50, 1.6);
+                }
             }
         })
     },
@@ -135,12 +158,12 @@ const pixelBoard = {
         const colorInputs = document.querySelectorAll('.colorsJS');
 
         const getRandomColor = () => {
-          const letters = '0123456789ABCDEF';
-          let color = '#';
-          for (let i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-          }
-          return color;
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
         };
         
         colorInputs.forEach((input) => {

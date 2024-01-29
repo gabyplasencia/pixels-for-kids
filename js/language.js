@@ -1,4 +1,4 @@
-const language = document.querySelectorAll('.language-btnJS');
+const languages = document.querySelectorAll('.language-btnJS');
 const textsToChange = document.querySelectorAll('[data-section]');
 
 const changeLanguage = async (language) => {
@@ -32,9 +32,15 @@ const translate = (textToChange, selector, text) =>{
         textToChange.innerHTML = text;
     }
 }
-language.forEach( btn => {
+languages.forEach( btn => {
     btn.addEventListener('click', (e) => {
+        let imgLan = document.querySelectorAll('.lan-iconJS');
+        let currentLanguage = e.target;
         let language = e.target.id;
+        imgLan.forEach( img => {
+            img.classList.remove('current-languageJS');
+        });
+        currentLanguage.classList.add('current-languageJS');
         changeLanguage(language);
     })
 })
