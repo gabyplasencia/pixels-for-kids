@@ -1,0 +1,57 @@
+@use "../util/" as u;
+
+.not-working-container {
+    text-align: center;
+    text-wrap: pretty;
+    margin-block: 1.5rem;
+    height: 100dvh;
+}
+
+.not-working-container,
+.wrapper-not-working {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper-not-working {
+    gap: 1rem;
+    margin: auto auto;
+}
+
+#logo2 {
+    align-self: flex-start;
+}
+
+#wrench {
+    transform: rotate(45deg);
+    height: 13rem;
+}
+
+#sorry {
+    line-height: 1;
+    font-size: var(--fs-400);
+    color: var(--dark-brown);
+    font-weight: var(--fw-semibold);
+}
+
+#explanation {
+    text-transform: none;
+    color: var(--dark-blue);
+    font-weight: var(--fw-semibold);
+    font-size: var(--fs-200);
+    width: 65%;
+}
+
+@include u.media(1030px) {
+    .container {
+        display: none;
+    }
+}
+
+@media (min-width: 1030px){
+    .not-working-container {
+        display: none;
+    }
+}
+

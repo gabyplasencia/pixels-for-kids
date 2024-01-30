@@ -1,13 +1,19 @@
 {
+    "logo": {
+        "attr-alt-logo": "Pixel para niños"
+    },
+
+    "not-working": {
+        "sorry": "LO SIENTO !!!",
+        "attr-alt-wrench": "un dibujo de una palanca y un destornillador",
+        "exp": "La app no es compatible con esta pantalla",
+        "attr-ariaLabel-sad": "carita triste"
+    },
+
     "menu": {
         "head": "menú",
-        "language": [
-                    {"language" : "idioma"}, 
-                    {"attr-ariaLabel-language": "idioma"}
-                ],
-        "music": [
-                    {"music" : "música"},  
-                    {"attr-ariaLabel-music": "música"}],
+        "language": "idioma",
+        "music": "música",
         "attr-alt-en": "inglés",
         "attr-alt-es": "español",
         "attr-ariaLabel-music_on": "encender música",
@@ -18,9 +24,7 @@
     },
 
     "tools": {
-        "head": [
-                {"tools" :"herramientas"}, 
-                {"attr-ariaLabel-tools":"herramientas"}],
+        "head": "herramientas",
         "bucket": "cubo de pintura",
         "attr-alt-bucket": "cubo de pintura",
         "brush": "pincel",
@@ -28,9 +32,7 @@
     },
 
     "palette": {
-        "head": [
-                {"palette" :"paleta"}, 
-                {"attr-ariaLabel-palette":"paleta de colores"}],
+        "head": "paleta",
         "edit": "editar colores",
         "attr-alt-edit": "editar colores",
         "done": "hecho",
@@ -47,18 +49,10 @@
     },
 
     "board-resize": {
-        "head": [
-                {"size" :"tamaños"}, 
-                {"attr-ariaLabel-size":"tamaños"}],
-        "small": [
-                {"small" :"pequeña"}, 
-                {"attr-ariaLabel-small":"pequeña"}],
-        "medium": [
-                {"medium" :"mediana"}, 
-                {"attr-ariaLabel-medium":"mediana"}],
-        "big": [
-                {"big" :"grande"}, 
-                {"attr-ariaLabel-big":"grande"}],
+        "head": "tamaños",
+        "small": "pequeña",
+        "medium": "mediana",
+        "big": "grande",
         "attr-ariaLabel-close": "cerrar menú"
     }
 }

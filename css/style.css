@@ -94,14 +94,21 @@ button:active {
   --fs-100: 1.2rem;
   --fs-200: 2rem;
   --fs-300: 2.2rem;
+  --fs-400: 6rem;
 }
 
+@media (max-width: 450px) {
+  :root {
+    --fs-400: 4rem;
+  }
+}
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 95%;
   margin-inline: auto;
   margin-block: 1.5rem;
+  align-items: flex-start;
 }
 @media (max-width: 1200px) {
   .container {
@@ -115,7 +122,6 @@ button:active {
 
 .menu {
   justify-self: end;
-  align-self: flex-start;
 }
 
 .wrapper-main {
@@ -167,6 +173,59 @@ button:active {
   font-size: var(--fs-000);
 }
 
+.not-working-container {
+  text-align: center;
+  text-wrap: pretty;
+  margin-block: 1.5rem;
+  height: 100dvh;
+}
+
+.not-working-container,
+.wrapper-not-working {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper-not-working {
+  gap: 1rem;
+  margin: auto auto;
+}
+
+#logo2 {
+  align-self: flex-start;
+}
+
+#wrench {
+  transform: rotate(45deg);
+  height: 13rem;
+}
+
+#sorry {
+  line-height: 1;
+  font-size: var(--fs-400);
+  color: var(--dark-brown);
+  font-weight: var(--fw-semibold);
+}
+
+#explanation {
+  text-transform: none;
+  color: var(--dark-blue);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-200);
+  width: 65%;
+}
+
+@media (max-width: 1030px) {
+  .container {
+    display: none;
+  }
+}
+@media (min-width: 1030px) {
+  .not-working-container {
+    display: none;
+  }
+}
 td {
   border: 1px solid rgba(0, 0, 0, 0.181);
 }

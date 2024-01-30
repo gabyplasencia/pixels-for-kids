@@ -11,19 +11,28 @@
 </head>
 
 <body>
+    <div class="not-working-container">
+        <img data-section="logo" data-value="attr-alt-logo" alt="Pixel for kids" src="assets/img/logo.png" id="logo2">
+        <div class="wrapper-not-working">
+            <p id="sorry" data-section="not-working" data-value="sorry">SORRY !!!</p>
+            <img id="wrench" data-section="not-working" data-value="attr-alt-wrench" alt="a wrench and a screwdriver draw" src="assets/img/not-working.png">
+            <p id="explanation" data-section="not-working" data-value="exp">This app is not compatible with this screen<br>
+            <span data-section="not-working" data-value="attr-ariaLabel-sad" aria-label="sad face">:&lpar;</span></p>
+        </div>
+    </div>
     <audio id="musicJS" src="./assets/music/KevinMacLeod-IttyBitty-8Bit.mp3" loop></audio>
     <div class="wrapper-modal">
         <div class="modal menu__modalJS hidden">
             <button class="closeJS"><img data-section="menu" data-value="attr-alt-close" alt="close menu" src="assets/icons/close.png"></button>
             <div class="modal__language modal__options">
-                <strong class="modal__title" data-section="menu" data-value="language" aria-label="language">Language</strong>
+                <strong class="modal__title" data-section="menu" data-value="language">Language</strong>
                 <div class="laguage__options">
                     <button class="language-btnJS"><img id="en" data-section="menu" data-value="attr-alt-en" alt="english" src="assets/img/en.png" class="lan-iconJS current-languageJS"></button>
                     <button class="language-btnJS"><img id="es" data-section="menu" data-value="attr-alt-es" alt="spanish" src="assets/img/es.png" class="lan-iconJS"></button>
                 </div>
             </div>
             <div class="modal__music modal__options">
-                <strong class="modal__title" data-section="menu" data-value="music" aria-label="music">Music</strong>
+                <strong class="modal__title" data-section="menu" data-value="music">Music</strong>
                 <div class="music__options">
                     <button class="musicJS" id="on" data-section="menu" data-value="attr-ariaLabel-music_on" aria-label="music on">ON</button>
                     <img id="icon-on" data-section="menu" data-value="attr-alt-music_on_icon" alt="music on icon" src="assets/icons/music-on.png">
@@ -36,18 +45,18 @@
     <div class="wrapper-modal">
         <div class="modal board__modalJS hidden">
             <button class="closeJS"><img data-section="board-resize" data-value="attr-alt-close" alt="close menu" src="assets/icons/close.png"></button>
-            <strong class="modal__title" data-section="board-resize" data-value="head" aria-label="board size">board sizes</strong>
+            <strong class="modal__title" data-section="board-resize" data-value="head">board sizes</strong>
             <div class="wrapper-options wrapper-options-sizes">
                 <div class="modal__options">
-                    <button class="modal__option-sizes size-selectedJS b-sizeJS" id="small" data-section="board-resize" data-value="small" aria-label="small">small</button>
+                    <button class="modal__option-sizes size-selectedJS b-sizeJS" id="small" data-section="board-resize" data-value="small">small</button>
                     <span class="board-size">30x30</span>
                 </div>
                 <div class="modal__options">
-                    <button class="modal__option-sizes b-sizeJS" id="medium" data-section="board-resize" data-value="medium" aria-label="medium">medium</button>
+                    <button class="modal__option-sizes b-sizeJS" id="medium" data-section="board-resize" data-value="medium">medium</button>
                     <span class="board-size">50x65</span>                    
                 </div>
                 <div class="modal__options">
-                    <button class="modal__option-sizes b-sizeJS" id="big" data-section="board-resize" data-value="big" aria-label="big">big</button>
+                    <button class="modal__option-sizes b-sizeJS" id="big" data-section="board-resize" data-value="big">big</button>
                     <span class="board-size">50x80</span>                    
                 </div>
             </div>
@@ -55,14 +64,14 @@
     </div>
 
     <div class="container">
-        <img src="assets/img/logo.png" id="logo">
+        <img data-section="logo" data-value="attr-alt-logo" alt="Pixel for kids" src="assets/img/logo.png" id="logo">
 
-        <button id="menuJS" class="menu" data-section="menu" data-value="head" aria-label="menu">Menu</button>
+        <button id="menuJS" class="menu" data-section="menu" data-value="head">Menu</button>
 
         <main class="wrapper-main">
             <div class="wrapper-interations">
                 <section class="interations-container" id="toolsJS">
-                    <h2 class="board__tools-title" data-section="tools" data-value="head" aria-label="tools">Tools</h2>
+                    <h2 class="board__tools-title" data-section="tools" data-value="head">Tools</h2>
                     <div class="tools-wrapper">
                         <div class="tooltip-wrapper tooltip-trigger">
                             <span class="tooltip" data-section="tools" data-value="bucket">bucket</span>
@@ -76,7 +85,7 @@
                 </section>
                 <section class="interations-container" id="palette">
                     <div class="palette__head">
-                        <h2 class="board__tools-title" data-section="palette" data-value="head" aria-label="palette">Palette</h2>
+                        <h2 class="board__tools-title" data-section="palette" data-value="head">Palette</h2>
                         <div class="wrapper-palette-options">
                             <div class="tooltip-wrapper tooltip-trigger">
                                 <span class="tooltip" data-section="palette" data-value="edit">edit</span>

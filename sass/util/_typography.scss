@@ -1,3 +1,5 @@
+@use "./mixin" as u;
+
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&display=swap');
 
 :root {
@@ -10,4 +12,11 @@
     --fs-100: 1.2rem;
     --fs-200: 2rem;
     --fs-300: 2.2rem;
+    --fs-400: 6rem;
+}
+
+@include u.media(450px) {
+    :root {
+        --fs-400: 4rem;
+    }
 }

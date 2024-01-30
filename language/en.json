@@ -1,12 +1,19 @@
 {
+    "logo": {
+        "attr-alt-logo": "Pixel for kids"
+    },
+    
+    "not-working": {
+        "sorry": "SORRY !!!",
+        "attr-alt-wrench": "a wrench and a screwdriver draw",
+        "exp": "This app is not compatible with this screen",
+        "attr-ariaLabel-sad": "sad face"
+    },
+
     "menu": {
         "head": "menu",
-        "language": [
-                    {"language" :"language"}, 
-                    {"attr-ariaLabel-language":"language"}],
-        "music": [
-                    {"music" :"music"}, 
-                    {"attr-ariaLabel-music":"music"}],
+        "language": "language",
+        "music": "music",
         "attr-alt-en": "english",
         "attr-alt-es": "spanish",
         "attr-ariaLabel-music_on":"music on",
@@ -17,9 +24,7 @@
     },
 
     "tools": {
-        "head": [
-                {"tools" :"tools"}, 
-                {"attr-ariaLabel-tools":"tools"}],
+        "head": "tools",
         "bucket": "bucket",
         "attr-alt-bucket": "bucket",
         "brush": "brush",
@@ -27,9 +32,7 @@
     },
 
     "palette": {
-        "head": [
-                {"palette" :"palette"}, 
-                {"attr-ariaLabel-palette":"palette"}],
+        "head": "palette",
         "edit": "edit colors",
         "attr-alt-edit": "edit colors",
         "done": "done",
@@ -46,18 +49,10 @@
     },
 
     "board-resize": {
-        "head": [
-                {"size" :"board sizes"}, 
-                {"attr-ariaLabel-size":"board sizes"}],
-        "small": [
-                {"small" :"small"}, 
-                {"attr-ariaLabel-small":"small"}],
-        "medium": [
-                {"medium" :"medium"}, 
-                {"attr-ariaLabel-medium":"medium"}],
-        "big": [
-                {"big" :"big"}, 
-                {"attr-ariaLabel-big":"big"}],
+        "head": "board sizes",
+        "small": "small",
+        "medium": "medium",
+        "big": "big",
         "attr-ariaLabel-close": "close menu"
     }
 }
