@@ -24,8 +24,8 @@
     aspect-ratio: 1;
     position: absolute; 
     //the 6px are the modal border thickness 
-    top: (($height-close + 6px) / 2.5) * -1;
-    right: (($height-close + 6px) / 2.5) * -1;
+    top: calc((($height-close + 6px) / 2.5) * -1);
+    right: calc((($height-close + 6px) / 2.5) * -1);
 }
 
 .modal__options {

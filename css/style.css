@@ -37,8 +37,9 @@ body {
   font-family: var(--main-font);
   background-color: var(--light-green);
   line-height: 1.4;
-  height: 100vh;
+  min-height: 100dvh;
   text-transform: capitalize;
+  position: relative;
 }
 
 img,
@@ -107,7 +108,7 @@ button:active {
   grid-template-columns: 1fr 1fr;
   width: 95%;
   margin-inline: auto;
-  margin-block: 1.5rem;
+  padding-block: 1.5rem;
   align-items: flex-start;
 }
 @media (max-width: 1200px) {
@@ -224,6 +225,21 @@ button:active {
 @media (min-width: 1030px) {
   .not-working-container {
     display: none;
+  }
+}
+body::after {
+  min-height: 100dvh;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    opacity: 0.15;
+    background-image: url(../../assets/bg.gif);
+    background-size: 21rem;
   }
 }
 td {
