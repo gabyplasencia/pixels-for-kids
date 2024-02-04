@@ -1,6 +1,6 @@
 # PIXEL 4 KIDS
 
-![Design preview for the Space tourism website coding challenge](./assets/img/showcase.png.jpg)
+![Design preview](./assets/img/showcase.png)
 
 ## Table of contents
 
@@ -17,7 +17,7 @@
 
 ### Links
 
-- Live Site URL: [PIXEL 4 KIDS](https://pixel4kids.netlify.app/)
+- Live Site URL: [PIXEL 4 KIDS website](https://pixel4kids.netlify.app/)
 
 ## My process
 
@@ -42,7 +42,7 @@ As I wanted to make a bilingual page that was also accessible, the logic of tran
 
 ### Useful resources
 
-- [General Info](https://developer.mozilla.org/en-US/)
+- [MDN Web Docs](https://developer.mozilla.org/en-US/)
 - [SASS](https://sass-lang.com/documentation/at-rules/control/if/)
 - [CSS Tricks](https://css-tricks.com/)
 - Youtube Channels:
