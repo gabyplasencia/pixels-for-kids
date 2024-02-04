@@ -152,6 +152,8 @@ const pixelBoard = {
             let img = document.createElement("img");
             img.src = "assets/img/color-border.png";
             img.classList.add('color-border');
+            img.setAttribute('aria-hidden', 'true');
+            img.setAttribute('alt', 'color');
             input.classList.add("colorsJS");
             label.appendChild(input);
             label.appendChild(img);
