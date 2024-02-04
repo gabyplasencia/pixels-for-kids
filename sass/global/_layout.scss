@@ -5,7 +5,7 @@
     grid-template-columns: 1fr 1fr;
     width: 95%;
     margin-inline: auto;
-    padding-block: 1.5rem;
+    padding: 1.5rem;
     align-items: flex-start;
     @include u.media() {
         width: 100%;

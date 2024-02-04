@@ -34,6 +34,7 @@ p {
 }
 
 body {
+  cursor: url("../../assets/cursor/arrow.png"), auto;
   font-family: var(--main-font);
   background-color: var(--light-green);
   line-height: 1.4;
@@ -52,16 +53,17 @@ input,
 button,
 textarea,
 a,
-select {
+select,
+label {
   font: inherit;
   color: inherit;
+  cursor: inherit;
 }
 
 button {
   border: none;
   background: none;
   text-transform: capitalize;
-  cursor: pointer;
   transition: all 100ms ease;
 }
 
@@ -108,7 +110,7 @@ button:active {
   grid-template-columns: 1fr 1fr;
   width: 95%;
   margin-inline: auto;
-  padding-block: 1.5rem;
+  padding: 1.5rem;
   align-items: flex-start;
 }
 @media (max-width: 1200px) {
@@ -227,12 +229,12 @@ button:active {
     display: none;
   }
 }
-body::after {
+.container::after, .not-working-container::after {
   min-height: 100dvh;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  body::after {
+  .container::after, .not-working-container::after {
     content: "";
     position: absolute;
     z-index: -1;
@@ -409,7 +411,7 @@ input[type=button] {
   background-color: transparent;
   height: 50px;
   width: 50px;
-  border-radius: 10px;
+  border-radius: 14px;
 }
 @media (max-width: 1200px) {
   input[type=button] {
@@ -425,7 +427,7 @@ input[type=color] {
   background-color: transparent;
   height: 50px;
   width: 50px;
-  border-radius: 10px;
+  border-radius: 14px;
 }
 @media (max-width: 1200px) {
   input[type=color] {
@@ -442,7 +444,8 @@ label {
   position: relative;
 }
 
-.color-border {
+.color-border,
+.color-border-selected {
   position: absolute;
   inset: 0;
   z-index: 2;

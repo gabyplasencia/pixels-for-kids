@@ -1,6 +1,8 @@
 const board = document.getElementById('boardJS');
 const resizeButton = document.getElementById('resizeJS');
 const deleteDraw = document.getElementById('deleteJS');
+const SELECTED_IMG = "assets/img/color-border-selected.png";
+const UNSELECTED_IMG = "assets/img/color-border.png";
 
 const pixelBoard = {
 
@@ -216,7 +218,6 @@ const pixelBoard = {
             })
         })
     },
-
     colorSelection: () => {
         const palette = document.querySelectorAll('.colorsJS');
         const wrapper = document.querySelector(".wrapper-colorsJS");
@@ -224,13 +225,18 @@ const pixelBoard = {
         palette.forEach( color => {
             color.addEventListener('click', (e) => {
                 let selectedColor = e.target;
-                palette.forEach( color => { 
-                    color.classList.remove('color-pickedJS');
-                    })
+                palette.forEach( cl => { 
+                    const label = cl.parentElement;
+                    const img = label.querySelector("img");
+                    if(cl != selectedColor) {
+                        img.src = UNSELECTED_IMG;
+                    }else{
+                        img.src = SELECTED_IMG;
+                    }
+                    cl.classList.remove('color-pickedJS');
+                })
                 selectedColor.classList.add('color-pickedJS');
-                if(e.target.classList.contains('color-pickedJS')){
-                    wrapper.dataset.selectedColor = e.target.value;
-                }
+                wrapper.dataset.selectedColor = e.target.value;
             })
         })
     },
@@ -238,7 +244,7 @@ const pixelBoard = {
     brush: () => {
         const wrapper = document.querySelector('.wrapper-colorsJS');
         const brush = document.getElementById('brushJS');
-        //document.body.style.cursor = "pointer";
+        document.body.style.cursor = "url('../../assets/cursor/brush.png'), auto";
 
         board.addEventListener('dragstart', (e) => {
             e.preventDefault();
@@ -324,7 +330,7 @@ const pixelBoard = {
 
                 if(tool.id === 'bucketJS'){
                     tool.classList.add('active-toolJS');
-                    //document.body.style.cursor = "wait";
+                    document.body.style.cursor = "url('../../assets/cursor/bucket.png'), auto";
                     let selectedColor = document.querySelector('.color-pickedJS');
 
                     if (selectedColor) {

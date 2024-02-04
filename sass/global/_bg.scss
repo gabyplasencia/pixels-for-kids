@@ -1,9 +1,9 @@
-body::after {
+.container::after,.not-working-container::after {
     min-height: 100dvh;
 }
 
 @media (prefers-reduced-motion: no-preference) {  
-    body::after{
+    .container::after, .not-working-container::after{
         content: "";
         position: absolute;
         z-index: -1;

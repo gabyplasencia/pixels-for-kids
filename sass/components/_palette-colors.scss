@@ -1,6 +1,6 @@
 @use "../util/" as u;
 
-$border-radius: 10px;
+$border-radius: 14px;
 @mixin colors-shape {
     border: none;
     -webkit-appearance: none;
@@ -40,7 +40,8 @@ label {
     position: relative;
 }
 
-.color-border {
+.color-border,
+.color-border-selected {
     position: absolute;
     inset: 0;
     z-index: 2;

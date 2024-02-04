@@ -4,7 +4,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -34,6 +33,7 @@ p {
 }
 
 body {
+    cursor: url('../../assets/cursor/arrow.png'), auto;
     font-family: var(--main-font);
     background-color: var(--light-green);
     line-height: 1.4;
@@ -52,16 +52,17 @@ input,
 button,
 textarea,
 a,
-select {
+select,
+label {
     font: inherit;
     color: inherit;
+    cursor: inherit;
 }
 
 button {
     border: none;
     background: none;
     text-transform: capitalize;
-    cursor: pointer;
     transition: all 100ms ease;
 }
 
