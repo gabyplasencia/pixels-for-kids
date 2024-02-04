@@ -185,6 +185,7 @@ const pixelBoard = {
         const wrapperPalette = document.getElementById('palette');
         const editColor = document.getElementById('color-editJS');
         const colorCheck = document.getElementById('color-edit-finishJS');
+        const wrapperColor = wrapperPalette.querySelector(".wrapper-colorsJS");
         let palette = document.querySelectorAll('.colorsJS');
 
         let colors = [];
@@ -203,6 +204,7 @@ const pixelBoard = {
                         color.style.backgroundColor = color.value;
                         color.style.color = color.value;
                         color.setAttribute('value', color.value);
+                        wrapperColor.dataset.selectedColor = color.value;
                     }
                 })
             })
